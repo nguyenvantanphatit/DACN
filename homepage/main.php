@@ -15,9 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="#" class="navbar-brand mx-4 mb-3">
-                    <img src="./img/logohutech.png" alt="" style="width: 200px; height: 45px;">
+                    <img src="../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
                 </a>
                 <div class="navbar-nav w-100">
                     <div class="nav-item dropdown">
@@ -79,7 +79,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/profile.jpg" alt=""
+                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
                                         style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
@@ -90,7 +90,7 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/profile.jpg" alt=""
+                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
                                         style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
@@ -121,9 +121,13 @@
                             <a href="#" class="dropdown-item text-center">Xem tất cả thông báo</a>
                         </div>
                     </div>
-                    <div class="nav-item dropdown">
+                    <?php
+                   
+                    if(!empty($_COOKIE['checkLogin']))
+                    {
+                        echo('<div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/profile.jpg" alt=""
+                            <img class="rounded-circle me-lg-2" src="../img/profile.jpg" alt=""
                                 style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">Tấn Phát</span>
                         </a>
@@ -132,7 +136,18 @@
                             <a href="#" class="dropdown-item">Cài đặt</a>
                             <a href="#" class="dropdown-item">Đăng xuất</a>
                         </div>
-                    </div>
+                    </div>');
+                    }
+                   else{
+                    echo('<div class="nav-item dropdown"  style="display:flex;">
+                        <a href="" class="nav-link" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="../img/profile-42914_960_720.png" alt=""
+                                style="width: 40px; height: 40px;">
+                            <a href="../Login/login.html" class="d-none d-lg-inline-flex" style="margin-top:20px">Đăng nhập</a>
+                        </a>    
+                    </div>');
+                   }
+                    ?>
                 </div>
             </nav>
             <!-- Navbar End -->
@@ -549,7 +564,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
