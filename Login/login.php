@@ -9,8 +9,10 @@
             if($row['username']==$user)
             {
                 if($row['password']==$pass)
-                    {
-                        echo("<script>alert('Login successful')'</script>");
+                    {   
+                        setcookie("checkLogin",$row['username'],time()+(83000*30),"/");
+                        setcookie("checkGV",$row['authority'],time()+(83000*30),"/");
+                        echo("<script>alert('Login successful');</script>");
                         echo("<script>location='../homepage/main.php'</script>");
                     }
             }

@@ -122,19 +122,19 @@
                         </div>
                     </div>
                     <?php
-                   
+                    
                     if(!empty($_COOKIE['checkLogin']))
                     {
                         echo('<div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="../img/profile.jpg" alt=""
                                 style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Tấn Phát</span>
+                            <span class="d-none d-lg-inline-flex">'.$_COOKIE['checkLogin'].'</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Thông tin tài khoản</a>
                             <a href="#" class="dropdown-item">Cài đặt</a>
-                            <a href="#" class="dropdown-item">Đăng xuất</a>
+                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
                         </div>
                     </div>');
                     }
@@ -152,7 +152,7 @@
             </nav>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-
+                <h1>Điền nội dung vào homepage nghe Phát </h1>
             </div>
 
 

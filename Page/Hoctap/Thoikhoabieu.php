@@ -26,7 +26,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="/DACN/homepage/main.php" class="navbar-brand mx-4 mb-3">
+                <a href="DACN/homepage/main.php" class="navbar-brand mx-4 mb-3">
                     <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
                 </a>
                 <div class="navbar-nav w-100">
@@ -34,7 +34,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class="fa fa-laptop me-2"></i>Học Tập</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Thời Khoá Biểu</a>
+                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
                             <a href="typography.html" class="dropdown-item">Lớp</a>
                         </div>
                     </div>
@@ -122,19 +122,19 @@
                         </div>
                     </div>
                     <?php
-                   
+                    
                     if(!empty($_COOKIE['checkLogin']))
                     {
                         echo('<div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="../../img/profile.jpg" alt=""
                                 style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Tấn Phát</span>
+                            <span class="d-none d-lg-inline-flex">'.$_COOKIE['checkLogin'].'</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Thông tin tài khoản</a>
                             <a href="#" class="dropdown-item">Cài đặt</a>
-                            <a href="#" class="dropdown-item">Đăng xuất</a>
+                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
                         </div>
                     </div>');
                     }
@@ -152,7 +152,7 @@
             </nav>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-
+                <h1>Điền nội dung vào homepage nghe Phát </h1>
             </div>
 
 
