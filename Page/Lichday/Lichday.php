@@ -15,9 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,26 +27,17 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="#" class="navbar-brand mx-4 mb-3">
-                    <img src="../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
+                    <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
                 </a>
                 <div class="navbar-nav w-100">
-                <a href="/DACN/homepage/main.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                                class="fa fa-laptop me-2"></i>Học Tập</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
-                            <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
-                        </div>
-                    </div>
-                    <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
+                    <a href="/DACN/Page/Lichday/Lichday.php" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Lịch dạy</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bars me-2"></i> Khác</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                            <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Đăng xuất</a>
+                            <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
                         </div>
                     </div>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
@@ -55,8 +46,6 @@
             </nav>
         </div>
         <!-- Sidebar End -->
-
-
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
@@ -79,7 +68,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
+                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
                                         style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
@@ -90,7 +79,7 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
+                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
                                         style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
@@ -127,7 +116,7 @@
                     {
                         echo('<div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="../img/profile.jpg" alt=""
+                            <img class="rounded-circle me-lg-2" src="../../img/profile.jpg" alt=""
                                 style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">'.$_COOKIE['checkLogin'].'</span>
                         </a>
@@ -141,7 +130,7 @@
                    else{
                     echo('<div class="nav-item dropdown"  style="display:flex;">
                         <a href="" class="nav-link" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="../img/profile-42914_960_720.png" alt=""
+                            <img class="rounded-circle me-lg-2" src="../../img/profile-42914_960_720.png" alt=""
                                 style="width: 40px; height: 40px;">
                             <a href="../Login/login.html" class="d-none d-lg-inline-flex" style="margin-top:20px">Đăng nhập</a>
                         </a>    
@@ -152,33 +141,7 @@
             </nav>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <h2 style= "color:blue">Thong bao</h2>
-                        <h3 style= "color:red">App e-HUTECH bổ sung tính năng</h3>
-                        <p>Tin mới!!! App e-HUTECH bổ sung tính năng cung cấp Khóa học trực tuyến (mini course) giá ưu đãi</p>
-                    </div>
-                    <div class="row">
-                        <h3 style= "color:red">Hướng dẫn xem Thời khóa biểu</h2>
-                        <p>Để xem Thời khóa biểu, sinh viên vui lòng truy cập 
-                            website Phòng Đào tạo - Khảo thí: http://daotao.hutech.edu.vn/,
-                             hoặc xem ở menu Thời khoá biểu tại Portal Sinh viên (sinhvien.hutech.edu.vn)
-                              hoặc xem trên ứng dụng e-HUTECH.</p>
-                    </div>
-                    <div class="row">
-                        <h3 style= "color:red">SINH VIÊN THỰC HIỆN ĐÁNH GIÁ RÈN LUYỆN HỌC KỲ 1 NĂM HỌC 2021-2022</h3>
-                    <p>Tin mới!!! App e-HUTECH bổ sung tính năng cung cấp Khóa học trực tuyến (mini course) giá ưu đãi</hp>
-                    </div>
-                    <div class="row">
-                        <h3 style= "color:red">App e-HUTECH bổ sung tính năng</h3>        
-                        <p> Sau khi đăng nhập tài khoản, Sinh viên xem thông báo thời gian ĐGRL sinh v
-                        iên và chọn mục Đánh giá rèn luyện/ Điểm cá nhân/chọn đúng học kỳ 1 năm 
-                        học 2021-2022 để đánh giá</p>
-                        <p> Lưu ý: Vì thời gian ĐGRL không có kết quả học tập học kỳ nên SV sẽ
-                         không chấm điểm tại mục điểm học tập được. Sau khi có kết quả học tậ
-                         p học kỳ, Khoa/Viện sẽ cập nhật và cộng điểm tương ứng theo khung điểm</p>                               
-                    </div>
-                </div>              
+                <h1>Điền nội dung vào homepage nghe Phát </h1>
             </div>
 
 
@@ -201,13 +164,14 @@
 
         <!-- Content End -->
 
+
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 
 </html>

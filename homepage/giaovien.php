@@ -30,23 +30,14 @@
                     <img src="../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
                 </a>
                 <div class="navbar-nav w-100">
-                <a href="/DACN/homepage/main.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                                class="fa fa-laptop me-2"></i>Học Tập</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
-                            <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
-                        </div>
-                    </div>
-                    <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
+                    <a href="/DACN/Page/Lichday/Lichday.php" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Lịch dạy</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bars me-2"></i> Khác</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                            <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Đăng xuất</a>
+                            <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
                         </div>
                     </div>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
