@@ -113,21 +113,40 @@
                         </div>
                     </div>
                     <?php
-                    
+                    require "../ConnectDB.php";
                     if(!empty($_COOKIE['checkLogin']))
                     {
+                        
+                        $id=$_COOKIE['checkLogin'];
+                        $sql="SELECT * FROM `userInformation` WHERE `idUser`=$id";
+                        $result=$conn->query($sql);
+                        $row=$result->fetch_assoc();
+                        if($row!=null)
+                        {
                         echo('<div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="../img/profile.jpg" alt=""
+                            <img class="rounded-circle me-lg-2" src="../img/'.$row['avatar'].'" alt=""
                                 style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">'.$_COOKIE['checkLogin'].'</span>
+                            <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                            <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
                             <a href="#" class="dropdown-item">Cài đặt</a>
                             <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
                         </div>
-                    </div>');
+                        </div>');
+                        }
+                        else{
+                            echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                                if(a==true)
+                                {
+                                    location='../Login/logout.php';
+                                }
+                                else{
+                                    location='../Login/logout.php';
+                                }
+                                </script>");
+                        }
                     }
                    else{
                     echo('<div class="nav-item dropdown"  style="display:flex;">
