@@ -169,12 +169,97 @@
                     ?>
                 </div>
             </nav>
+
             <!-- Navbar End -->
+                
             <div class="container-fluid pt-4 px-4">
-                <h1>Điền nội dung vào homepage nghe Phát </h1>
+                    <div class="row g-0 text-center">
+                        <div class="col-6 col-md-4">
+                            <h2><i class="bi bi-calendar"></i>Thời Khoá Biểu</h2>
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <button><i class="bi bi-arrow-left"></i></button>
+                            Từ ngày 31/10/2022 đến 06/11/2022
+                            <button><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    </table>
+                    <table class="table">
+                            
+                            <thead>
+                                <tr>
+                                <th scope="col">Ngày</th>
+                                <th scope="col">Tiết</th>
+                                <th scope="col">Mã Môn học - Tên môn</th>
+                                <th scope="col">Thông tin tiết học</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th rowspan="2" scope="row">Thứ 2</th>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>
+                                <th rowspan="2" scope="row">Thứ 3</th>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>  
+                                </tr>
+                                <tr>
+                                <th rowspan="2" scope="row">Thứ 4</th>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>
+                                </tr>
+                                <tr>
+                                <th rowspan="2" scope="row">Thứ 5</th>
+                                </tr>
+                                <tr>    
+                                </tr>
+                                <tr>
+                                <th rowspan="2" scope="row">Thứ 6</th>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                <th rowspan="2" scope="row">Thứ 7</th>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>
+                                <td>7-11</td>
+                                <td>CMP177 - Lập trình trên thiết bị di động</td>
+                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
+                                </tr>
+                                <tr>
+                                <th rowspan="2" scope="row">Chủ Nhật</th>
+                                
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                
+                                
+                            </tbody>
+                    </table>
+
             </div>
-
-
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
