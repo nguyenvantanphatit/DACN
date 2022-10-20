@@ -51,13 +51,47 @@
             </nav>
         </div>');
             }
-           
+            else{
+                echo(' <div class="sidebar pe-4 pb-3">
+                <nav class="navbar bg-light navbar-light">
+                    <a href="#" class="navbar-brand mx-4 mb-3">
+                        <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
+                    </a>
+                    <div class="navbar-nav w-100">
+                    <a href="/DACN/homepage/main.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                    class="fa fa-laptop me-2"></i>Học Tập</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
+                                <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
+                            </div>
+                        </div>
+                        <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
+                        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fa fa-bars me-2"></i> Khác</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
+                                <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                            </div>
+                        </div>
+                        <a href="/DACN/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
+                    </div>
+                </nav>
+            </div>');
+            }
         }
         else{
             echo("<script>location='/DACN/Login/logout.php'</script>");
         }
-        ?>
+       
+    ?>
         <!-- Sidebar End -->
+
+
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
@@ -80,7 +114,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
+                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
                                         style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
@@ -91,7 +125,7 @@
                             <hr class="dropdown-divider">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
+                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
                                         style="width: 40px; height: 40px;">
                                     <div class="ms-2">
                                         <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
@@ -132,38 +166,38 @@
                          $result=$conn->query($sql);
                          $row=$result->fetch_assoc();
                          if($row!=null)
-                         {
-                         echo('<div class="nav-item dropdown">
-                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                             <img class="rounded-circle me-lg-2" src="/DACN/img/'.$row['avatar'].'" alt=""
-                                 style="width: 40px; height: 40px;">
-                             <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
-                         </a>
-                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                         <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
-                             <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
-                             <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                         </div>
-                         </div>');
-                         }
-                         else{
-                             echo("<script> var a=confirm('Login False! Please Check Your Input!');
-                                 if(a==true)
-                                 {
-                                     location='../../Login/logout.php';
-                                 }
-                                 else{
-                                     location='../../Login/logout.php';
-                                 }
-                                 </script>");
-                         }
+                        {
+                        echo('<div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="/DACN/img/'.$row['avatar'].'" alt=""
+                                style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
+                            <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
+                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
+                        </div>
+                        </div>');
+                        }
+                        else{
+                            echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                                if(a==true)
+                                {
+                                    location='../Login/logout.php';
+                                }
+                                else{
+                                    location='../Login/logout.php';
+                                }
+                                </script>");
+                        }
                     }
                    else{
                     echo('<div class="nav-item dropdown"  style="display:flex;">
                         <a href="" class="nav-link" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="/DACN/img/profile-42914_960_720.png" alt=""
+                            <img class="rounded-circle me-lg-2" src="../../img/profile-42914_960_720.png" alt=""
                                 style="width: 40px; height: 40px;">
-                            <a href="../Login/login.html" class="d-none d-lg-inline-flex" style="margin-top:20px">Đăng nhập</a>
+                            <a href="../../Login/login.html" class="d-none d-lg-inline-flex" style="margin-top:20px">Đăng nhập</a>
                         </a>    
                     </div>');
                    }
@@ -171,13 +205,10 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-            <div class="container-fluid pt-4 px-4">
-                <h1>Điền nội dung vào homepage nghe Phát </h1>
-            </div>
+            
 
-
-                  <!-- Footer Start -->
-    <footer class="bg-lighskyblue text-center text-black">
+       <!-- Footer Start -->
+       <footer class="bg-lighskyblue text-center text-black">
             <!-- Grid container -->
             <div class="container p-4 pb-0">
             <!-- Section: Social media -->
@@ -214,14 +245,13 @@
 
         <!-- Content End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

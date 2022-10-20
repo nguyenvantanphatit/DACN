@@ -24,36 +24,45 @@
     <div class="container-xxl position-relative bg-white d-flex p-0">
 
         <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="#" class="navbar-brand mx-4 mb-3">
-                    <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
-                </a>
-                <div class="navbar-nav w-100">
-                <a href="/DACN/homepage/main.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                                class="fa fa-laptop me-2"></i>Học Tập</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
-                            <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
+        <?php
+        if(!empty($_COOKIE['checkLogin']))
+        {
+                echo(' <div class="sidebar pe-4 pb-3">
+                <nav class="navbar bg-light navbar-light">
+                    <a href="#" class="navbar-brand mx-4 mb-3">
+                        <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
+                    </a>
+                    <div class="navbar-nav w-100">
+                    <a href="/DACN/homepage/main.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                    class="fa fa-laptop me-2"></i>Học Tập</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
+                                <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
+                            </div>
                         </div>
-                    </div>
-                    <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bars me-2"></i> Khác</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                        <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
+                        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fa fa-bars me-2"></i> Khác</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
+                                <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                            </div>
                         </div>
+                        <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
                     </div>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>');
+            
+        }
+        else{
+            echo("<script>location='/DACN/Login/logout.php'</script>");
+        }
+       ?>
         <!-- Sidebar End -->
 
 
@@ -139,8 +148,8 @@
                           <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
                       </a>
                       <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                          <a href="#" class="dropdown-item">Thông tin tài khoản</a>
-                          <a href="#" class="dropdown-item">Cài đặt</a>
+                      <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
+                          <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
                           <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
                       </div>
                       </div>');
@@ -260,18 +269,37 @@
                     </table>
 
             </div>
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            <a href="#">HUTECH</a> Nguyễn Văn Tấn Phát
-                            <a href="#">HUTECH</a> Nguyễn Văn Tấn Phát
-                        </div>
+                  <!-- Footer Start -->
+    <footer class="bg-lighskyblue text-center text-black">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=100010757443088">
+                    <img src="/image/iconSocial1.jpg" width="50" alt=""></a>
 
-                    </div>
-                </div>
-            </div>
+                <a href="#">
+                    <img src="/image/iconSocial2.png" width="55" alt=""></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
+            © 2022 Copyright:
+            <a class="text-black" href="">QTP</a>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
+            Design by:
+            <a class="text-white" href="">QTP </a>
+            <a>Contact: dragonhatgame@gmail.com</a>
+            , quytrup775@gmail.com, Phat
+        </div>
+
+        <!-- Copyright -->
+            </footer>
             <!-- Footer End -->
         </div>
 

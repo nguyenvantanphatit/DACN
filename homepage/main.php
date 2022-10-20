@@ -49,7 +49,7 @@
                             <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
                         </div>
                     </div>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                    <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
                 </div>
             </nav>
@@ -140,7 +140,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
-                            <a href="#" class="dropdown-item">Cài đặt</a>
+                            <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
                             <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
                         </div>
                         </div>');
@@ -201,18 +201,37 @@
             </div>
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            <a href="#">HUTECH</a> Nguyễn Văn Tấn Phát
-                            <a href="#">HUTECH</a> Nguyễn Văn Tấn Phát
-                        </div>
+                  <!-- Footer Start -->
+    <footer class="bg-lighskyblue text-center text-black">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=100010757443088">
+                    <img src="/image/iconSocial1.jpg" width="50" alt=""></a>
 
-                    </div>
-                </div>
-            </div>
+                <a href="#">
+                    <img src="/image/iconSocial2.png" width="55" alt=""></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
+            © 2022 Copyright:
+            <a class="text-black" href="">QTP</a>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
+            Design by:
+            <a class="text-white" href="">QTP </a>
+            <a>Contact: dragonhatgame@gmail.com</a>
+            , quytrup775@gmail.com, Phat
+        </div>
+
+        <!-- Copyright -->
+            </footer>
             <!-- Footer End -->
         </div>
 

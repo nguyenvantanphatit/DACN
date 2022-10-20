@@ -1,7 +1,6 @@
 <?php
     require '../../ConnectDB.php';
     try {
-        
         $name=$_POST['name'];
         $class=$_POST['class'];
         $faculty=$_POST['faculty'];
@@ -20,9 +19,11 @@
         `faculty`='$faculty', `phoneNumber`='$phoneNumber', `email`='$email', `address`='$address', `avatar`='$newImageName'
         WHERE `IdUser`='$idUser'";
             if($conn->query($sql)){
-                echo("Successfully make change!!");    
+                echo("Successfully make change!!");
+                echo("<script>location='InformationUser.php'</script>");    
             }else{
                 echo("Failed to make change!!");
+                echo("<script>location='InformationUser.php'</script>");        
             }
         }
        catch(PDOException $e) {
