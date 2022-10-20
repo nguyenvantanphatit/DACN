@@ -27,7 +27,7 @@
         <?php
         if(!empty($_COOKIE['checkLogin']))
         {
-                echo(' <div class="sidebar pe-4 pb-3">
+                echo('<div class="sidebar pe-4 pb-3">
                 <nav class="navbar bg-light navbar-light">
                     <a href="#" class="navbar-brand mx-4 mb-3">
                         <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
@@ -63,6 +63,7 @@
             echo("<script>location='/DACN/Login/logout.php'</script>");
         }
        ?>
+       
         <!-- Sidebar End -->
 
 
@@ -180,9 +181,128 @@
             </nav>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-           
-            </div>
+                    <div class="row g-0 text-center">
+                        <div class="col-6 col-md-4">
+                            <h2><i class="bi bi-book"></i>Lớp Học</h2>
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                            <label class="form-check-label" for="inlineRadio1">Sắp xếp theo thứ tiết</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                            <label class="form-check-label" for="inlineRadio2">Sắp xếp môn học</label>
+                            </div>
+                        </div>
+                    </div>
+                    </table>
+                    <table class="table">
+                            
+                            <thead>
+                                <tr>
+                                <th scope="col">Tên Môn Học</th>                               
+                                <th scope="col">STC</th>
+                                <th scope="col">Thứ</th>
+                                <th scope="col">Tiết BD	</th>
+                                <th scope="col">Phòng</th>
+                                <th scope="col">Thời gian học</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td rowspan="2">Bảo mật thông tin</td>
+                                <td rowspan="2">3</td>
+                                <td>Ba</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td rowspan="2">22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Bảy</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                </tr>
+                                <tr>
+                                <td rowspan="2">Lập trình trên thiết bị di động</td>
+                                <td rowspan="2">3</td>
+                                <td>Sáu</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td rowspan="2">22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Bảy</td>
+                                <td>7</td>
+                                <td>E1-08.02</td>
+                                </tr>
+                                <tr>
+                                <td>Thực hành lập trình mạng máy tính</td>
+                                <td>1</td>
+                                <td>Hai</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td>22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Thực hành lập trình mạng máy tính</td>
+                                <td>1</td>
+                                <td>Hai</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td>22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Thực hành lập trình mạng máy tính</td>
+                                <td>1</td>
+                                <td>Hai</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td>22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td rowspan="2">Kiểm thử và đảm bảo chất lượng phần mềm</td>
+                                <td rowspan="2">3</td>
+                                <td>Ba</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td rowspan="2">22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Bảy</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                </tr>
+                                <tr>
+                                <td rowspan="2">Lập trình mạng máy tính</td>
+                                <td rowspan="2">3</td>
+                                <td>Ba</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td rowspan="2">22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Bảy</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                </tr>
+                                <tr>
+                                <td rowspan="2">Cơ sở dữ liệu nâng cao</td>
+                                <td rowspan="2">3</td>
+                                <td>Ba</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                <td rowspan="2">22/08/2022--16/10/2022</td>
+                                </tr>
+                                <tr>
+                                <td>Bảy</td>
+                                <td>7</td>
+                                <td>E1-08.01</td>
+                                </tr>
+                            </tbody>
+                    </table>
 
+            </div>
 
                   <!-- Footer Start -->
     <footer class="bg-lighskyblue text-center text-black">
