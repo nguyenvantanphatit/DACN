@@ -24,15 +24,10 @@
     <div class="container-xxl position-relative bg-white d-flex p-0">
 
         <!-- Sidebar Start -->
-        <?php
-        if(!empty($_COOKIE['checkLogin']))
-        {
-            if($_COOKIE['checkLogin']==2)
-            { 
-            echo(' <div class="sidebar pe-4 pb-3">
+        <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="#" class="navbar-brand mx-4 mb-3">
-                    <img src="/DACN/img/logohutech.png" alt="" style="width: 200px; height: 45px;">
+                    <img src="../../img/logohutech.png" alt="" style="width: 200px; height: 45px;">
                 </a>
                 <div class="navbar-nav w-100">
                 <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
@@ -45,18 +40,11 @@
                             <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
                         </div>
                     </div>
-                    <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
                 </div>
             </nav>
-        </div>');
-            }
-           
-        }
-        else{
-            echo("<script>location='/DACN/Login/logout.php'</script>");
-        }
-        ?>
+        </div>
         <!-- Sidebar End -->
         <!-- Content Start -->
         <div class="content">
@@ -140,8 +128,8 @@
                              <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
                          </a>
                          <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                         <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
-                             <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
+                             <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                             <a href="#" class="dropdown-item">Cài đặt</a>
                              <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
                          </div>
                          </div>');
@@ -172,41 +160,48 @@
             </nav>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-                <h1>Điền nội dung vào homepage nghe Phát </h1>
+                <div>
+                    <h2 style="display:inline-flex">Lịch dạy tuần </h2>
+                    <input type="text" name="tuan" style="height: 40px; margin-left: 20px; margin-bottom: 20px;">
+                    <input type="submit" value="Kiểm tra" style="height: 40px; margin-left: 20px;">
+                </div>
+                <h1>Hiện đang set cứng</h1>
+                <div>
+                    <table> 
+                        <tr>
+                            <th style="text-align: center; color:White;background-color:#6699CC;border-width:1px;border-style:solid;font-size:11px;height:18px;width:250px;white-space:nowrap; font-size: 20px;">Môn</th>
+                            <th style="text-align: center; color:White;background-color:#6699CC;border-width:1px;border-style:solid;font-size:11px;height:18px;width:250px;white-space:nowrap; font-size: 20px;">Phòng</th>
+                            <th style="text-align: center; color:White;background-color:#6699CC;border-width:1px;border-style:solid;font-size:11px;height:18px;width:250px;white-space:nowrap; font-size: 20px;">Tiết bắt đầu</th>
+                            <th style="text-align: center; color:White;background-color:#6699CC;border-width:1px;border-style:solid;font-size:11px;height:18px;width:250px;white-space:nowrap; font-size: 20px;">Tiết kết thúc</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">Lịch sử Đảng</td>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">E1.09.02</td>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">2</td>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">12</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">Kiểm thử</td>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">E1.09.05</td>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">2</td>
+                            <td style="text-align: center;border-color:Gray;border-width:1px;border-style:solid;height:22px;width:110px;">12</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
 
 
-                  <!-- Footer Start -->
-    <footer class="bg-lighskyblue text-center text-black">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/profile.php?id=100010757443088">
-                    <img src="/image/iconSocial1.jpg" width="50" alt=""></a>
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            <a href="#">HUTECH</a> Trương Nguyễn Phú Quý
+                        </div>
 
-                <a href="#">
-                    <img src="/image/iconSocial2.png" width="55" alt=""></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
-            © 2022 Copyright:
-            <a class="text-black" href="">QTP</a>
-        </div>
-        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
-            Design by:
-            <a class="text-white" href="">QTP </a>
-            <a>Contact: dragonhatgame@gmail.com</a>
-            , quytrup775@gmail.com, Phat
-        </div>
-
-        <!-- Copyright -->
-            </footer>
+                    </div>
+                </div>
+            </div>
             <!-- Footer End -->
         </div>
 
