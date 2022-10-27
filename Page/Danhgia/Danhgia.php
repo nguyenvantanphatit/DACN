@@ -39,12 +39,12 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                     class="fa fa-laptop me-2"></i>Học Tập</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
+                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item">Thời Khoá Biểu</a>
                                 <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
                             </div>
                         </div>
                         <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                       
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <i class="fa fa-bars me-2"></i> Khác</a>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
+                       
                     </div>
                 </nav>
             </div>');
@@ -82,35 +82,8 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Tin Nhắn</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả tin nhắn</a>
-                        </div>
+                        
+                        
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -118,17 +91,23 @@
                             <span class="d-none d-lg-inline-flex">Thông Báo</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Hutech giảm học phí</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Mật khẩu bạn đã được cập nhật</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả thông báo</a>
+                        <?php require '../../ConnectDB.php';
+                     $id=$_COOKIE['checkLogin'];
+                     $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
+                     $result=$conn->query($sql);
+                    
+                     while($row = $result->fetch_assoc())
+                     {
+                        
+                     echo('
+                     <a href="'.$row['Link'].'" class="dropdown-item">
+                         <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
+                         <small>15 phút trước</small>
+                     </a>
+                     <hr class="dropdown-divider">
+                 ');
+                     }
+                     ?>
                         </div>
                     </div>
                     <?php
@@ -180,394 +159,47 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-                   
-            <div class="container-fluid pt-4 px-4">
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" style = "margin-top:10px">Đánh giá</button>
-            </div>
-            
+            <table class="table">
+                            
+                            <thead>
+                                <tr>
+                                <th scope="col">Tên Môn Học</th>                               
+                                <th scope="col">STC</th>
+                                <th scope="col">Thứ</th>
+                                <th scope="col">Tiết BD	</th>
+                                <th scope="col">Phòng</th>
+                                <th scope="col">Thời gian học</th>
+                                <th scope="col">Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <?php
+                            require '../../ConnectDB.php';
+                            $idUser= $_COOKIE['checkLogin'];
+                            $datetime =new datetime();
+                            $date=$datetime->format("d/m/Y");
+                            $sql="SELECT * FROM `schedule` WHERE `IdUser`=$idUser AND `endStudying`>='$date' GROUP BY `Subjects`";
+                            $result=$conn->query($sql);
+                           
+                            while($row=$result->fetch_assoc())
+                            {
+                                echo(' <tbody>
+                                <tr>
+                                <td rowspan="2">'.$row['Subjects'].'</td>
+                                <td rowspan="2">3</td>
+                                <td>'.$row['Day'].'</td>
+                                <td>'.$row['Lesson'].'</td>
+                                <td>'.$row['Room'].'</td>
+                                <td rowspan="2">'.$row['startStudying'].'--'.$row['endStudying'].'</td>
+                                <td><a href="Danhgia1.php?">Đánh Giá</a></td> 
+                                </tr>');
+                            }
+                            ?>
+                           
+                                
+                                
+                            </tbody>
+                    </table>
+            <!-- Chỉnh sửa  -->
             
                    <!-- Footer Start -->
     <footer class="bg-lighskyblue text-center text-black">

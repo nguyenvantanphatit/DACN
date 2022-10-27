@@ -35,12 +35,12 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class="fa fa-laptop me-2"></i>Học Tập</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
+                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item">Thời Khoá Biểu</a>
                             <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
                         </div>
                     </div>
                     <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                  
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bars me-2"></i> Khác</a>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
+                  
                 </div>
             </nav>
         </div>
@@ -72,35 +72,7 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Tin Nhắn</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả tin nhắn</a>
-                        </div>
+                        
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -108,18 +80,30 @@
                             <span class="d-none d-lg-inline-flex">Thông Báo</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Hutech giảm học phí</h6>
+                        <?php
+                     
+                            require '../ConnectDB.php';
+                            if(!empty($_COOKIE['checkLogin']))
+                           
+                            { $id=$_COOKIE['checkLogin'];
+                           
+                            $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
+                            $result=$conn->query($sql);
+                           
+                            while($row = $result->fetch_assoc())
+                            {
+                               
+                            echo('
+                            <a href="'.$row['Link'].'" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
                                 <small>15 phút trước</small>
                             </a>
                             <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Mật khẩu bạn đã được cập nhật</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả thông báo</a>
-                        </div>
+                        ');
+                            }}
+                                                    
+                        ?>
+                       </div> 
                     </div>
                     <?php
                      require "../ConnectDB.php";

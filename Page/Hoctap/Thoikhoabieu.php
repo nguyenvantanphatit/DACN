@@ -18,6 +18,7 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../../css/style.css" rel="stylesheet">
+    <link href="style1.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,12 +39,12 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                     class="fa fa-laptop me-2"></i>Học Tập</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php" class="dropdown-item">Thời Khoá Biểu</a>
+                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item">Thời Khoá Biểu</a>
                                 <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
                             </div>
                         </div>
                         <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                        
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <i class="fa fa-bars me-2"></i> Khác</a>
@@ -53,7 +54,7 @@
                             </div>
                         </div>
                         <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
+                      
                     </div>
                 </nav>
             </div>');
@@ -81,35 +82,8 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Tin Nhắn</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả tin nhắn</a>
-                        </div>
+                       
+                        
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -117,17 +91,23 @@
                             <span class="d-none d-lg-inline-flex">Thông Báo</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Hutech giảm học phí</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Mật khẩu bạn đã được cập nhật</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả thông báo</a>
+                        <?php require '../../ConnectDB.php';
+                     $id=$_COOKIE['checkLogin'];
+                     $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
+                     $result=$conn->query($sql);
+                    
+                     while($row = $result->fetch_assoc())
+                     {
+                        
+                     echo('
+                     <a href="'.$row['Link'].'" class="dropdown-item">
+                         <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
+                         <small>15 phút trước</small>
+                     </a>
+                     <hr class="dropdown-divider">
+                 ');
+                     }
+                     ?>
                         </div>
                     </div>
                     <?php
@@ -186,88 +166,73 @@
                         <div class="col-6 col-md-4">
                             <h2><i class="bi bi-calendar"></i>Thời Khoá Biểu</h2>
                         </div>
-                        <div class="col-sm-6 col-md-8">
-                            <button><i class="bi bi-arrow-left"></i></button>
-                            Từ ngày 31/10/2022 đến 06/11/2022
-                            <button><i class="bi bi-arrow-right"></i></button>
-                        </div>
+                        <div class="col-sm-6 col-md-8 tam">
+                        
+                            <?php 
+                                $id1=$_GET['id']-1;
+                                $id2=$_GET['id']+1;
+                                $day= $_GET['id']*7;
+                                $day1=$day-7;
+                                $datetime = new DateTime();
+                                $datetime->modify('+'.$day1.' day');
+                                $datetime1 = new DateTime();
+                                $datetime1->modify('+'.$day.' day');
+                                echo('<form action="" method="get">
+                                <input type="text" class="an" name="id" value="'.$id1.'">
+                                <input type="submit" value="<-"></input>
+                                </form>
+
+                                Từ ngày '.$datetime->format('Y-m-d').' đến '.$datetime1->format('Y-m-d').'
+                                <form action="" method="get">
+                                <input type="text" class="an" name="id" value="'.$id2.'">
+                                <input type="submit" value="->"></input>
+                                </form>');
+                            ?>
+                         </div>
                     </div>
                     </table>
-                    <table class="table">
-                            
-                            <thead>
-                                <tr>
-                                <th scope="col">Ngày</th>
-                                <th scope="col">Tiết</th>
-                                <th scope="col">Mã Môn học - Tên môn</th>
-                                <th scope="col">Thông tin tiết học</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <th rowspan="2" scope="row">Thứ 2</th>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>
-                                <th rowspan="2" scope="row">Thứ 3</th>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>  
-                                </tr>
-                                <tr>
-                                <th rowspan="2" scope="row">Thứ 4</th>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>
-                                </tr>
-                                <tr>
-                                <th rowspan="2" scope="row">Thứ 5</th>
-                                </tr>
-                                <tr>    
-                                </tr>
-                                <tr>
-                                <th rowspan="2" scope="row">Thứ 6</th>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>
-                                
-                                </tr>
-                                <tr>
-                                <th rowspan="2" scope="row">Thứ 7</th>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>
-                                <td>7-11</td>
-                                <td>CMP177 - Lập trình trên thiết bị di động</td>
-                                <td>Phòng: E1-08.02 - Lớp: 19DTHA3</td>
-                                </tr>
-                                <tr>
-                                <th rowspan="2" scope="row">Chủ Nhật</th>
-                                
-                                </tr>
-                                <tr>
-                                
-                                </tr>
-                                
-                                
-                            </tbody>
+                    <?php
+                    require '../../ConnectDB.php';
+                        $day= $_GET['id']*7;
+                        $day1=$day-7;
+                        $datetime = new DateTime();
+                        $datetime->modify('+'.$day1.' day');
+                        $datetime1 = new DateTime();
+                        $datetime1->modify('+'.$day.' day');
+                   
+                    echo(' <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Ngày</th>
+                        <th scope="col">Tiết</th>
+                        <th scope="col">Mã Môn học - Tên môn</th>
+                        <th scope="col">Thông tin tiết học</th>
+                        </tr>
+                    </thead><tbody>');  
+                    $date=$datetime->format('d/m/Y');
+                    print_r($date);
+                    for($i=2;$i<=8;$i++)
+                    {
+                        $tam='THỨ '.$i;
+                        $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam' AND `startStudying`<='$date' AND `endStudying`>='$date'  ";
+                        $result=$conn->query($sql);
+                    while($row= $result->fetch_assoc())
+                    {
+                        echo('
+                        <tr>
+                        <th rowspan="2" scope="row">'.$row['Day'].'</th>
+                        <td>'.$row['Lesson'].'</td>
+                        <td>'.$row['Subjects'].'</td>
+                        <td>'.$row['Room'].'</td>
+                        </tr>');
+                    } 
+                    echo('
+                    </tbody>
+                    '); 
+                    }
+                    
+                   ?>
                     </table>
-
             </div>
                   <!-- Footer Start -->
     <footer class="bg-lighskyblue text-center text-black">

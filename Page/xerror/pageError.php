@@ -37,7 +37,6 @@
                 <div class="navbar-nav w-100">
                 <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
                     <a href="/DACN/Page/Lichday/Lichday.php" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Lịch dạy</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bars me-2"></i> Khác</a>
@@ -47,7 +46,7 @@
                         </div>
                     </div>
                     <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                    
+                   
                 </div>
             </nav>
         </div>');
@@ -69,7 +68,7 @@
                             </div>
                         </div>
                         <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
-                      
+                        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <i class="fa fa-bars me-2"></i> Khác</a>
@@ -79,7 +78,7 @@
                             </div>
                         </div>
                         <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                       
+                        
                     </div>
                 </nav>
             </div>');
@@ -89,7 +88,7 @@
             echo("<script>location='/DACN/Login/logout.php'</script>");
         }
        
-    ?>
+        ?>
         <!-- Sidebar End -->
 
 
@@ -116,24 +115,17 @@
                             <span class="d-none d-lg-inline-flex">Thông Báo</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                        <?php require '../../ConnectDB.php';
-                     $id=$_COOKIE['checkLogin'];
-                     $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
-                     $result=$conn->query($sql);
-                    
-                     while($row = $result->fetch_assoc())
-                     {
-                        
-                     echo('
-                     <a href="'.$row['Link'].'" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
-                         <small>15 phút trước</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                 ');
-                     }
-                     ?>
-                     
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Hutech giảm học phí</h6>
+                                <small>15 phút trước</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Mật khẩu bạn đã được cập nhật</h6>
+                                <small>15 phút trước</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">Xem tất cả thông báo</a>
                         </div>
                     </div>
                     <?php
@@ -185,68 +177,11 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-            <?php
-                if(!empty($_COOKIE['checkLogin'])){
-                    $id=$_COOKIE['checkLogin'];
-                    $sql="SELECT * FROM `userInformation` WHERE `idUser`=$id";
-                    $result=$conn->query($sql);
-                    $row=$result->fetch_assoc();
-                    $img=$row['avatar'];
-                    $add=$row['address'];
-                    $name=$row['nameUser'];
-                    $class=$row['class'];
-                    $faculty=$row['faculty'];
-                    $email=$row['email'];
-                echo('
-                    <form action="ChangeInfo.php" method="post" enctype="multipart/form-data">
-                        <div style="display: inline-block">
-                            <img src="/DACN/img/'.$img.'" alt="" style="margin-left: 70%; margin-top: 20px; margin-bottom: 20px; height: 200px; width: 200px;border-radius: 100px;">
-                            <input type="file" id="image" accept=".jpg, .jpeg, .png" value="Thay đổi avatar" name="avatar" 
-                            style="margin-left:70%; border: none; margin-bottom: 20px; background: transparent; color: rgb(38, 84, 170);"/>
-                        </div>
-                        <div>
-                            <h5 style="display: inline-flex; width:20%; margin-top: 10px;">Họ và tên người dùng</h5>
-                            <input type="text" value="'.$name.'" name="name" style="width: 60%; height: 40px; border-radius: 50px; margin-bottom: 20px; padding-left: 1.5%;">
-
-                        </div>
-                        <div>
-                            <h5 style="display: inline-flex; width:20%; margin-top: 10px;">Lớp</h5>
-                            <input type="text" value='.$class.' name="class" style="width: 60%; height: 40px; border-radius: 50px; margin-bottom: 20px; padding-left: 1.5%;">
-                       
-                        </div>
-                        <div>
-                            <h5 style="display: inline-flex; width:20%; margin-top: 10px;">Khoa</h5>
-                            <input type="text" value="'.$faculty.'" name="faculty" style="width: 60%; height: 40px; border-radius: 50px; margin-bottom: 20px; padding-left: 1.5%;">
-                     
-                        </div>
-                        <div>
-                            <h5 style="display: inline-flex; width:20%; margin-top: 10px;">Số điện thoại</h5>
-                            <input type="text" value='.$row['phoneNumber'].' name="phoneNumber" style="width: 60%; height: 40px; border-radius: 50px; margin-bottom: 20px; padding-left: 1.5%;">
-                 
-                        </div>
-                        <div>
-                            <h5 style="display: inline-flex; width:20%; margin-top: 10px;">Email</h5>
-                            <input type="text" value='.$email.' name="email" style="width: 60%; height: 40px; border-radius: 50px; margin-bottom: 20px; padding-left: 1.5%;">
-                      
-                        </div>
-                        <div>
-                            <h5 style="display: inline-flex; width:20%; margin-top: 10px;">Địa chỉ</h5>
-                            <input type="text" value="'.$add.'" name="address" style="width: 60%; height: 40px; border-radius: 50px; margin-bottom: 20px; padding-left: 1.5%;">
-                            
-                        </div>
-                        <div>
-                            <input type="submit" value="Thay đổi" style="margin-left:40%; color: rgb(38, 84, 170);"/>
-                        </div>
-                    </form>
-                    ');
-                }else{
-                    echo('<h1>Please login first!!</h1>');
-                }
-            ?>
-
-
-                 <!-- Footer Start -->
-    <footer class="bg-lighskyblue text-center text-black">
+                   
+    <div style='text-align:center;margin-top:50px;'><h1 style='color:red'>Your input link is incorrect!?</h1></div>
+            
+        <!-- Footer Start -->
+        <footer class="bg-lighskyblue text-center text-black">
             <!-- Grid container -->
             <div class="container p-4 pb-0">
             <!-- Section: Social media -->
@@ -277,6 +212,7 @@
         <!-- Copyright -->
             </footer>
             <!-- Footer End -->
+           
         </div>
 
 
@@ -286,7 +222,7 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
+  
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>

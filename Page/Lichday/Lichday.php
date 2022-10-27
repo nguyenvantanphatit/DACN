@@ -32,6 +32,7 @@
                 <div class="navbar-nav w-100">
                 <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
                     <a href="/DACN/Page/Lichday/Lichday.php" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Lịch dạy</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bars me-2"></i> Khác</a>
@@ -40,8 +41,8 @@
                             <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
                         </div>
                     </div>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-comment me-2"></i>Nhắn tin</a>
+                    <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                   
                 </div>
             </nav>
         </div>
@@ -61,35 +62,7 @@
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Tin Nhắn</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="../../img/profile.jpg" alt=""
-                                        style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Phát đã gởi tin nhắn</h6>
-                                        <small>15 phút trước</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả tin nhắn</a>
-                        </div>
+                        
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -97,17 +70,23 @@
                             <span class="d-none d-lg-inline-flex">Thông Báo</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Hutech giảm học phí</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Mật khẩu bạn đã được cập nhật</h6>
-                                <small>15 phút trước</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Xem tất cả thông báo</a>
+                        <?php require '../../ConnectDB.php';
+                     $id=$_COOKIE['checkLogin'];
+                     $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
+                     $result=$conn->query($sql);
+                    
+                     while($row = $result->fetch_assoc())
+                     {
+                        
+                     echo('
+                     <a href="'.$row['Link'].'" class="dropdown-item">
+                         <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
+                         <small>15 phút trước</small>
+                     </a>
+                     <hr class="dropdown-divider">
+                 ');
+                     }
+                     ?>
                         </div>
                     </div>
                     <?php
@@ -192,16 +171,36 @@
 
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            <a href="#">HUTECH</a> Trương Nguyễn Phú Quý
-                        </div>
+            <footer class="bg-lighskyblue text-center text-black">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=100010757443088">
+                    <img src="/image/iconSocial1.jpg" width="50" alt=""></a>
 
-                    </div>
-                </div>
-            </div>
+                <a href="#">
+                    <img src="/image/iconSocial2.png" width="55" alt=""></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
+            © 2022 Copyright:
+            <a class="text-black" href="">QTP</a>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(204, 229, 255, 0.8);">
+            Design by:
+            <a class="text-white" href="">QTP </a>
+            <a>Contact: dragonhatgame@gmail.com</a>
+            , quytrup775@gmail.com, Phat
+        </div>
+
+        <!-- Copyright -->
+            </footer>
             <!-- Footer End -->
         </div>
 

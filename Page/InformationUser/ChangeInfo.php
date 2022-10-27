@@ -20,8 +20,13 @@
                 WHERE `IdUser`='$idUser'";
                 move_uploaded_file($tmpName,'../../img/'.$newImageName);
                 if($conn->query($sql)){ 
-                    echo("<script>alert('Successfully make change!! Reload page to see yur change!')</script>");
-                    echo("<script>location='/DACN/Page/InformationUser/InformationUser.php'</script>");  
+                    $sql1="INSERT INTO `notification`(`IdUser`, `Title`, `content`, `Link`) VALUES ('$idUser','Thay Đổi Thông Tin','Bạn Đã Thay Đổi Thông Tin Thành Công!','/DACN/Page/InformationUser/InformationUser.php')";
+                    if($conn->query($sql1))
+                    {
+                        echo("<script>alert('Successfully make change!! Reload page to see yur change!')</script>");
+                        echo("<script>location='/DACN/Page/InformationUser/InformationUser.php'</script>");  
+                    }
+                    
                 }else{
                     echo("<script>Failed to make change!!</script>");
                     echo("<script>location='/DACN/Page/InformationUser/InformationUser.php'</script>");
@@ -31,8 +36,12 @@
                 `faculty`='$faculty', `phoneNumber`='$phoneNumber', `email`='$email', `address`='$address'
                 WHERE `IdUser`='$idUser'";
                 if($conn->query($sql)){
-                    echo("<script>alert('Successfully make change!! Reload page to see yur change!')</script>");
-                    echo("<script>location='/DACN/Page/InformationUser/InformationUser.php'</script>");  
+                     $sql1="INSERT INTO `notification`(`IdUser`, `Title`, `content`, `Link`) VALUES ('$idUser','Thay Đổi Thông Tin','Bạn Đã Thay Đổi Thông Tin Thành Công!','/DACN/Page/InformationUser/InformationUser.php')";
+                    if($conn->query($sql1))
+                    {
+                        echo("<script>alert('Successfully make change!! Reload page to see yur change!')</script>");
+                        echo("<script>location='/DACN/Page/InformationUser/InformationUser.php'</script>");  
+                    }
                 }else{
                     echo("<script>Failed to make change!!</script>");
                     echo("<script>location='/DACN/Page/InformationUser/InformationUser.php'</script>");
