@@ -175,23 +175,37 @@
                             <?php
                             require '../../ConnectDB.php';
                             $idUser= $_COOKIE['checkLogin'];
-                            $datetime =new datetime();
-                            $date=$datetime->format("d/m/Y");
-                            $sql="SELECT * FROM `schedule` WHERE `IdUser`=$idUser AND `endStudying`>='$date' GROUP BY `Subjects`";
+                            $date= getdate();
+                            $sql="SELECT * FROM `schedule` WHERE `IdUser`=$idUser ";
                             $result=$conn->query($sql);
-                           
+                            $list= array();
                             while($row=$result->fetch_assoc())
                             {
-                                echo(' <tbody>
+                               $date1=explode("/", $row["endStudying"]);
+                               
+                               if($date1[1]<=$date['mon'])
+                               {   
+                                    if($date1[0]<=$date['mday'])
+                                    {
+                                        array_push($list,$row);
+                                     }
+                               }
+                                
+                            }
+                            $i=0;
+                            for(;$i<count($list);$i++)
+                            {
+                            echo(' <tbody>
                                 <tr>
-                                <td rowspan="2">'.$row['Subjects'].'</td>
+                                <td rowspan="2">'.$list[$i]['Subjects'].'</td>
                                 <td rowspan="2">3</td>
-                                <td>'.$row['Day'].'</td>
-                                <td>'.$row['Lesson'].'</td>
-                                <td>'.$row['Room'].'</td>
-                                <td rowspan="2">'.$row['startStudying'].'--'.$row['endStudying'].'</td>
-                                <td><a href="Danhgia1.php?">Đánh Giá</a></td> 
+                                <td>'.$list[$i]['Day'].'</td>
+                                <td>'.$list[$i]['Lesson'].'</td>
+                                <td>'.$list[$i]['Room'].'</td>
+                                <td rowspan="2">'.$list[$i]['startStudying'].'--'.$list[$i]['endStudying'].'</td>
+                                <td><a href="Danhgia1.php?idTeacher='.$list[$i]['idTeacher'].'">Đánh Giá</a></td> 
                                 </tr>');
+                                
                             }
                             ?>
                            

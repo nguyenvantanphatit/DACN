@@ -199,7 +199,6 @@
                         $datetime->modify('+'.$day1.' day');
                         $datetime1 = new DateTime();
                         $datetime1->modify('+'.$day.' day');
-                   
                     echo(' <table class="table">
                     <thead>
                         <tr>
@@ -208,29 +207,44 @@
                         <th scope="col">Mã Môn học - Tên môn</th>
                         <th scope="col">Thông tin tiết học</th>
                         </tr>
-                    </thead><tbody>');  
-                    $date=$datetime->format('d/m/Y');
-                    print_r($date);
+                    </thead><tbody>');   
+                    
+                    $date0= $datetime->format("m");
+                    $date1= $datetime1->format("m");
+                    $list=array();
                     for($i=2;$i<=8;$i++)
                     {
                         $tam='THỨ '.$i;
-                        $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam' AND `startStudying`<='$date' AND `endStudying`>='$date'  ";
+                        $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam'";
                         $result=$conn->query($sql);
                     while($row= $result->fetch_assoc())
                     {
-                        echo('
-                        <tr>
-                        <th rowspan="2" scope="row">'.$row['Day'].'</th>
-                        <td>'.$row['Lesson'].'</td>
-                        <td>'.$row['Subjects'].'</td>
-                        <td>'.$row['Room'].'</td>
-                        </tr>');
+                        $date3=explode("/", $row["endStudying"]);
+                        $date2=explode("/", $row["startStudying"]);      
+                        if($date2[1]<=$date0 && $date3[1]>=$date1)
+                        {   
+                             if($date2[0]<=$date0 )
+                             {
+                                 array_push($list,$row);
+                              }
+                        }
+                       
                     } 
+                    
+                    }
+                    for($i=0;$i<count($list);$i++)
+                    {
+                    echo('
+                    <tr>
+                    <th rowspan="2" scope="row">'.$list[$i]['Day'].'</th>
+                    <td>'.$list[$i]['Lesson'].'</td>
+                    <td>'.$list[$i]['Subjects'].'</td>
+                    <td>'.$list[$i]['Room'].'</td>
+                    </tr>');
                     echo('
                     </tbody>
                     '); 
                     }
-                    
                    ?>
                     </table>
             </div>

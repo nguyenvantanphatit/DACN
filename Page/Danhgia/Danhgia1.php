@@ -161,6 +161,12 @@
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row form-group">
+                    <h1>Giáo Viên: <?php require "../../ConnectDB.php";
+                    $id= $_GET['idTeacher'];
+                    $sql="SELECT nameUser FROM `userInformation` WHERE `idUser`=$id";
+                    $result=$conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    echo($row['nameUser']); ?></h1>
                     <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
                         đánh
                         giá</label>
