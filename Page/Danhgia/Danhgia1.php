@@ -167,391 +167,404 @@
                     $result=$conn->query($sql);
                     $row = $result->fetch_assoc();
                     echo($row['nameUser']); ?></h1>
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra
-                        đánh
-                        giá</label>
-                    <div class="radio">
-                        <label for="radio1" class="form-check-label ">
-                            <input type="radio" id="radio1" name="radios" value="option1"
-                                class="form-check-input">Option 1
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio2" class="form-check-label ">
-                            <input type="radio" id="radio2" name="radios" value="option2"
-                                class="form-check-input">Option 2
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 3
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label for="radio3" class="form-check-label ">
-                            <input type="radio" id="radio3" name="radios" value="option3"
-                                class="form-check-input">Option 4
-                        </label>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <div class="row form-group">
-                    <label class=" form-control-label">5.2. Những khó khăn trong quá trình bạn tham gia học trực
-                        tuyến</label>
-                    <input type="text">
-                </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" style = "margin-top:10px">Đánh giá</button>
-            </div>
-            
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Thời gian có mặt ở lớp học của bạn chiếm bao
+                                    nhiêu % thời gian quy định của môn học?
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 1: Chuẩn bị giảng dạy. Giảng viên có công bố đầy đủ cho SV về:</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Đề cương chi tiết
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Mục tiêu học tập chung của môn học, cách thức kiểm tra đánh giá
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Mục tiêu học tập cụ thể của từng phần, hoặc chương, bài, hay tiết học
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Giáo trình/bài giảng, tài liệu tham khảo và cách thức tìm các tài liệu học
+                                    tập của môn học
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 2: Nội dung giảng dạy của giảng viên</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Bám sát mục tiêu học tập môn học, trong từng phần, chương, bài
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Khoa học, rõ ràng, chính xác
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Cập nhật kiến thức mới
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Chỉ ra được các ứng dụng thực tiễn (liên hệ thực tế)
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 3: Phương pháp giảng dạy</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Dễ hiểu, hấp dẫn, sinh động tạo hứng thú học tập cho SV
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Có ý kiến phản hồi tích cực cho SV về phương pháp học tập sau kiểm tra đánh
+                                    giá
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Có hướng dẫn SV tự học trên lớp và tự học ngoài lớp cụ thể, rõ ràng, hiệu quả
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">
+                                    Khuyến khích sự chủ động và sáng tạo của SV trong học tập
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 4: Kiểm tra đánh giá</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Phương pháp đánh giá kết quả học tập phù hợp, đa dạng và đảm bảo độ giá trị,
+                                    tin cậy.
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Giảng viên khách quan, công bằng trong kiểm tra đánh giá
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 5: Thực hiện quy chế giảng dạy của giảng viên</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Vào/ra lớp đúng giờ
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Thực hiện giảng dạy theo đúng thời khóa biểu
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Giảng dạy đủ số giờ qui định
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 6: Tác phong sư phạm</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Nhiệt tình và có trách nhiệm
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">
+                                    Bao quát được SV trên lớp
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Có thái độ thân thiện với SV
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label class=" form-control-label">Quan tâm đến sự tiến bộ của SV cả kiến thức, kỹ năng và thái độ
+                                </label>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">0 - 25%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">26 - 50%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">51 - 79%
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input">80 - 100%
+                                </div>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <label for="">Tiêu chí 7: Những hạn chế mà sinh viên đang gặp phải</label>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <div class="row form-group">
+                                    <label class=" form-control-label">Những khó khăn trong quá trình học trên lớp với thầy cô</label>
+                                    <input type="text">
+                                </div>
+                                <div class="row form-group">
+                                    <label class=" form-control-label">Những hạn chế của về cơ sở hạ tầng </label>
+                                    <input type="text">
+                                </div>
+                                <div class="row form-group">
+                                    <label class=" form-control-label">Những bất lợi khi việc kẹt xe lúc ra về</label>      
+                                    <input type="text">
+                                </div>
+                                <div class="row form-group">
+                                    <label class=" form-control-label">Những bất lợi về phòng thực hành máy tính</label>  
+                                    <input type="text">
+                                </div>
+                                <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px">Đánh giá</button>
+                            </div>                                                
             <!-- Chỉnh sửa  -->
             
                    <!-- Footer Start -->
