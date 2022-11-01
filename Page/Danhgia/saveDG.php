@@ -1,5 +1,5 @@
 <?php
-require "../../connectDB.php";
+require "../../ConnectDB.php";
     echo("<pre>");
     print_r($_POST);
     $list=array();
@@ -11,8 +11,8 @@ require "../../connectDB.php";
     $tam6 =round(($_POST['6a']+$_POST['6b']+$_POST['6c']+$_POST['6d'])/4);
     $idUser= $_COOKIE['checkLogin'];
     $idTeacher=$_POST['idTeacher'];
-    $sql="INSERT INTO `surveyresults`(`IdUser`, `IdUserTeacher`, `Tprepare`, `TContent`, `TMethod`, `testingMethod`, `TRules`, `profesionalManner`) 
-    VALUES ('$idUser','$idTeacher','$tam1',' $tam2',' $tam3',' $tam1',' $tam1',' $tam1')";
+    $sql="INSERT INTO `surveyresults`(`IdUser`, `IdUserTeacher`, `Tprepare`, `TContent`, `TMethod`, `testingMethod`, `TRules`, `professionalManner`) 
+    VALUES ('$idUser','$idTeacher','$tam1',' $tam2',' $tam3',' $tam4',' $tam5',' $tam6')";
     if($conn->query($sql))
     {
         echo("<script>a= confirm('THANKS YOU!!');

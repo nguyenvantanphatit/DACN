@@ -6,7 +6,7 @@
         $sql='SELECT * FROM taikhoan';
         $result=$conn->query($sql);
         $flag=0;
-        while ($row=$result->fetch_assoc()){
+        while ($row=$result->fetch_assoc()){    
             if($row['username']==$user)
             {
                 if($row['password']==$pass)
@@ -26,9 +26,9 @@
                     }
             }
         }
-        if($flag==0)
+        if($flag!=0)
         {
-            echo("<script> var a=confirm('Login False! Please Check Your Input!');
+        /* echo("<script> var a=confirm('Login False! Please Check Your Input!');
                 if(a==true)
                 {
                     location='login.html';
@@ -36,20 +36,20 @@
                 else{
                     location='login.html';
                 }
-                </script>");
+                </script>");*/
         }
     }
     else{
-        echo("<script> var a=confirm('Login False! Please Check Your Input!');
-        if(a==true)
-        {
-            location='login.html';
-        }
-        else{
-            location='login.html';
-        }
-        </script>");
-      
+                /*echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                if(a==true)
+                {
+                    location='login.html';
+                }
+                else{
+                    location='login.html';
+                }
+                </script>");*/
+            
     }
 
 ?>

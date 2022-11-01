@@ -569,7 +569,11 @@
                                 </div>
                                
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:10px">Đánh giá</button>
-                                <input type="text" name="idTeacher" style='display:none' value='<?php $id=$_GET['idTeacher']; echo($id);  ?>' >
+                                <input type="text" name="idTeacher" style='display:none' value='<?php $id=$_GET['idTeacher'];
+                                $id= $_GET['idTeacher'];
+                                $sql="SELECT ID FROM `userInformation` WHERE `idUser`=$id";
+                                $result=$conn->query($sql);
+                                $row = $result->fetch_assoc(); echo($row['ID']);  ?>' >
                                 </form>
                             </div>                                                
             <!-- Chỉnh sửa  -->
