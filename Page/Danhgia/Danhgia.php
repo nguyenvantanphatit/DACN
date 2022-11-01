@@ -179,16 +179,24 @@
                             $sql="SELECT * FROM `schedule` WHERE `IdUser`=$idUser ";
                             $result=$conn->query($sql);
                             $list= array();
+
                             while($row=$result->fetch_assoc())
                             {
                                $date1=explode("/", $row["endStudying"]);
-                               
-                               if($date1[1]<=$date['mon'])
+                             
+                               if($date1[1]<$date['mon'])
                                {   
-                                    if($date1[0]<=$date['mday'])
+                                array_push($list,$row);
+                               }
+                               else{if($date1[1]==$date['mon'])
                                     {
-                                        array_push($list,$row);
-                                     }
+                                        if($date1[0]<=$date['mday'])
+                                        {
+                                            
+                                            array_push($list,$row);
+                                         }
+                                    }
+
                                }
                                 
                             }
