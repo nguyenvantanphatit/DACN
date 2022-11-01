@@ -92,72 +92,66 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                         <?php require '../../ConnectDB.php';
-                     $id=$_COOKIE['checkLogin'];
-                     $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
-                     $result=$conn->query($sql);
+                    $id=$_COOKIE['checkLogin'];
+                    $sql="SELECT * FROM `notification` WHERE `IdUser`=$id ORDER BY `notification`.`id` DESC";
+                    $result=$conn->query($sql);
                     
-                     while($row = $result->fetch_assoc())
-                     {
-                        
-                     echo('
-                     <a href="'.$row['Link'].'" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
-                         <small>15 phút trước</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                 ');
-                     }
-                     ?>
-                        </div>
-                    </div>
-                    <?php
-                  require "../../ConnectDB.php";
-                  if(!empty($_COOKIE['checkLogin']))
-                  {
-                      
-                      $id=$_COOKIE['checkLogin'];
-                      $sql="SELECT * FROM `userInformation` WHERE `idUser`=$id";
-                      $result=$conn->query($sql);
-                      $row=$result->fetch_assoc();
-                      if($row!=null)
-                      {
-                      echo('<div class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                          <img class="rounded-circle me-lg-2" src="/DACN/img/'.$row['avatar'].'" alt=""
-                              style="width: 40px; height: 40px;">
-                          <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                      <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
-                          <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
-                          <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                      </div>
-                      </div>');
-                      }
-                      else{
-                          echo("<script> var a=confirm('Login False! Please Check Your Input!');
-                              if(a==true)
-                              {
-                                  location='../../Login/logout.php';
-                              }
-                              else{
-                                  location='../../Login/logout.php';
-                              }
-                              </script>");
-                      }
+                    while($row = $result->fetch_assoc())
+                    { 
+                    echo('
+                    <a href="'.$row['Link'].'" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">'.$row['content'].'</h6>
+                        <small>15 phút trước</small>
+                    </a>
+                    <hr class="dropdown-divider">');
                     }
-                   else{
-                    echo('<div class="nav-item dropdown"  style="display:flex;">
-                        <a href="" class="nav-link" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="/DACN/img/profile-42914_960_720.png" alt=""
-                                style="width: 40px; height: 40px;">
-                            <a href="/DACN/Login/login.html" class="d-none d-lg-inline-flex" style="margin-top:20px">Đăng nhập</a>
-                        </a>    
-                    </div>');
-                   }
                     ?>
+                    </div>
                 </div>
-            </nav>
+                <?php
+                require "../../ConnectDB.php";
+                if(!empty($_COOKIE['checkLogin']))
+                {      
+                    $id=$_COOKIE['checkLogin'];
+                    $sql="SELECT * FROM `userInformation` WHERE `idUser`=$id";
+                    $result=$conn->query($sql);
+                    $row=$result->fetch_assoc();
+                    if($row!=null)
+                    {
+                    echo('<div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <img class="rounded-circle me-lg-2" src="/DACN/img/'.$row['avatar'].'" alt=""
+                            style="width: 40px; height: 40px;">
+                        <span class="d-none d-lg-inline-flex">'.$row['nameUser'].'</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                    <a href="/DACN/Page/informationUser/informationUser.php" class="dropdown-item">Thông tin tài khoản</a>
+                        <a href="/DACN/Page/Option/Option.php" class="dropdown-item">Cài đặt</a>
+                        <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
+                    </div>
+                    </div>');
+                    }else{
+                        echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                            if(a==true)
+                            {
+                                location='../../Login/logout.php';
+                            }else{
+                                location='../../Login/logout.php';
+                            }
+                            </script>");
+                    }
+                }else{
+                echo('<div class="nav-item dropdown"  style="display:flex;">
+                    <a href="" class="nav-link" data-bs-toggle="dropdown">
+                        <img class="rounded-circle me-lg-2" src="/DACN/img/profile-42914_960_720.png" alt=""
+                            style="width: 40px; height: 40px;">
+                        <a href="/DACN/Login/login.html" class="d-none d-lg-inline-flex" style="margin-top:20px">Đăng nhập</a>
+                    </a>    
+                </div>');
+                }
+                ?>
+            </div>
+        </nav>
 
             <!-- Navbar End -->
                 
@@ -223,9 +217,10 @@
                         $date2=explode("/", $row["startStudying"]);      
                         if($date2[1]<=$date0 && $date3[1]>=$date1)
                         {   
-                             if($date2[0]<=$date0 )
+                            
+                             if($date2[0]<=$date0 || $date3[0]>=$date0 )
                              {
-                                 array_push($list,$row);
+                                array_push($list,$row);
                               }
                         }
                        
