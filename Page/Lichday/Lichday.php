@@ -176,10 +176,11 @@
                 $date0= $datetime->format("m");
                 $date1= $datetime1->format("m");
                 $list=array();
+                $id=$_COOKIE['checkLogin'];
                 for($i=2;$i<=8;$i++)
                 {
                     $tam='THỨ '.$i;
-                    $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam'";
+                    $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam' AND `idTeacher`=$id";
                     $result=$conn->query($sql);
                 while($row= $result->fetch_assoc())
                 {

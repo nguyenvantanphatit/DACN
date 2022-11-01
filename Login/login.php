@@ -25,10 +25,10 @@
                         
                     }
             }
-        }
+        }   
         if($flag!=0)
         {
-        /* echo("<script> var a=confirm('Login False! Please Check Your Input!');
+         echo("<script> var a=confirm('Login False! Please Check Your Input!');
                 if(a==true)
                 {
                     location='login.html';
@@ -36,11 +36,11 @@
                 else{
                     location='login.html';
                 }
-                </script>");*/
+                </script>");
         }
     }
     else{
-                /*echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                echo("<script> var a=confirm('Login False! Please Check Your Input!');
                 if(a==true)
                 {
                     location='login.html';
@@ -48,7 +48,7 @@
                 else{
                     location='login.html';
                 }
-                </script>");*/
+                </script>");
             
     }
 

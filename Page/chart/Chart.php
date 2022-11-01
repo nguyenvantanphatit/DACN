@@ -386,10 +386,20 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row">
+                <?php
+                 require "../../connectDB.php";
+                 $id=$_COOKIE['checkLogin'];
+                 $sql="SELECT * FROM `surveyresults`a,`userInformation` b WHERE a.`IdUserTeacher`=b.`ID` AND b.`idUser`= '$id'";
+                $result=$conn->query($sql);
+                $count=0;
+                while($row=$result->fetch_assoc()){
+                    $count++;
+                }
+                if($count>10){
+                    echo('<div class="row">
                     <div class="col-6">
                         <div class="card" style="margin-top:20%;width:100%">
-                            <div class="card-body" style='width:100%;height:100%'>
+                            <div class="card-body" style="width:100%;height:100%">
                                 <h5 class="card-title">Chuẩn Bị Đầu Môn</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">...</h6>
                                 <p class="card-text">Được đánh giá dựa trên mức độ phổ cập cho sinh viên về mục tiêu môn học, cách thức kiểm tra, tài liệu giảng dạy, thời gian có mặt trên lớp và cách tức tìm liệu để sinh viên có thể nắm bắt. 
@@ -399,21 +409,21 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class='row' align='right'>
-                            <div id="chart_div" class='col-12'></div>
+                        <div class="row" align="right">
+                            <div id="chart_div" class="col-12"></div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <div class="row" style='height:400px'>
+                <div class="row" style="height:400px">
                     <div class="col-6">
-                        <div class='row' align='right'>                          
-                            <div class="col-12" id='chart1'></div>
+                        <div class="row" align="right">                          
+                            <div class="col-12" id="chart1"></div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="card" style="margin-top:20%;width:100%">
-                            <div class="card-body" style='width:100%;height:100%'>
+                            <div class="card-body" style="width:100%;height:100%">
                                 <h5 class="card-title">Nội dung giảng dạy của giảng viên</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">...</h6>
                                 <p class="card-text">Được đánh giá dựa trên đánh giá của sinh viên về trong quá trình giảng dạy của giảng viên có được bám sát vào trong mục tiêu môn học, có được rõ ràng chính xác và giúp sinh viên hiểu được các kiến thức mới hay không.</p>
@@ -424,10 +434,10 @@
                   
                 </div>
                 <hr>
-                <div class="row" style='height:400px'>
+                <div class="row" style="height:400px">
                     <div class="col-6">
                         <div class="card" style="margin-top:10%;width:100%">
-                            <div class="card-body" style='width:100%;height:100%'>
+                            <div class="card-body" style="width:100%;height:100%">
                                 <h5 class="card-title">Phương pháp giảng dạy</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">...</h6>
                                 <p class="card-text">Được đánh giá dựa trên mức độ hiệu quả của phương pháp giảng viên đã dùng trong quá trình dạy học, mức độ hiểu bài của sinh viên và thái độ tích cực hay tiêu cực của sinh viên</p>
@@ -436,21 +446,21 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class='row' align='right' style='margin-top:10%'>                          
-                            <div class="col-12" id='chart2'></div>
+                        <div class="row" align="right" style="margin-top:10%">                          
+                            <div class="col-12" id="chart2"></div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <div class="row" style='height:400px'>
+                <div class="row" style="height:400px">
                     <div class="col-6">
-                        <div class='row' align='right' style='margin-top:10%'>                          
-                            <div class="col-12" style='height:300px' id='chart4'></div>
+                        <div class="row" align="right" style="margin-top:10%">                          
+                            <div class="col-12" style="height:300px" id="chart4"></div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="card" style="margin-top:10%;width:100%">
-                            <div class="card-body" style='width:100%;height:100%'>
+                            <div class="card-body" style="width:100%;height:100%">
                                 <h5 class="card-title">Kiểm tra đánh giá</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">...</h6>
                                 <p class="card-text">Được đánh giá dựa trên tính công bằng, khách quan của giảng viên trong hoạt động kiểm tra kiến thức và nắm được mức độ hiểu bài của sinh viên đưa điều chỉnh phù hợp.</p>
@@ -460,10 +470,10 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row" style='height:400px'>
+                <div class="row" style="height:400px">
                     <div class="col-6">
                         <div class="card" style="margin-top:10%;width:100%">
-                            <div class="card-body" style='width:100%;height:100%'>
+                            <div class="card-body" style="width:100%;height:100%">
                                 <h5 class="card-title">Thực hiện quy chế giảng dạy của giảng viên</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">...</h6>
                                 <p class="card-text">Được đánh giá dựa trên sự nghiêm túc, có trách nhiệm trong công việc của giảng viên trong quá trình thực hiện khóa học.</p>
@@ -472,21 +482,21 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class='row' align='right' style='margin-top:10%'>                          
-                            <div class="col-12" id='chart5'></div>
+                        <div class="row" align="right" style="margin-top:10%">                          
+                            <div class="col-12" id="chart5"></div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <div class="row" style='height:400px'>
+                <div class="row" style="height:400px">
                     <div class="col-6">
-                        <div class='row' align='right' style='margin-top:10%'>                          
-                            <div class="col-12" style='height:300px' id='chart6'></div>
+                        <div class="row" align="right" style="margin-top:10%">                          
+                            <div class="col-12" style="height:300px" id="chart6"></div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="card" style="margin-top:10%;width:100%">
-                            <div class="card-body" style='width:100%;height:100%'>
+                            <div class="card-body" style="width:100%;height:100%">
                                 <h5 class="card-title">Tác phong sư phạm</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">...</h6>
                                 <p class="card-text">Được đánh giá bằng thái độ, tác phong và hành vi ứng xử có chuyên nghiệp và phù hợp với vai vế của giảng viên hay không
@@ -495,7 +505,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>');
+                }
+                else{
+                    echo("<h1  style='text-align:center; color:Red;'> CHÚNG TÔI KHÔNG ĐỦ THÔNG TIN ĐÁNH GIÁ GIẢNG VIÊN NÀY!!!</h1>
+                    <h3  style='text-align:center'>Xin Vui Lòng Quay Lại Khi Đã Đủ Thông Tin Đánh Giá</h3>");
+                }
+                ?>
+                
             </div>
 
 

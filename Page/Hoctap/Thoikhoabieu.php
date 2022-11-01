@@ -209,7 +209,7 @@
                     for($i=2;$i<=8;$i++)
                     {
                         $tam='THỨ '.$i;
-                        $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam'";
+                        $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam' AND `idUser`='$id'";
                         $result=$conn->query($sql);
                     while($row= $result->fetch_assoc())
                     {
