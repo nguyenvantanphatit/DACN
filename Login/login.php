@@ -19,7 +19,10 @@
                         {
                             echo("<script>location='../homepage/main.php'</script>");
                         }
-                        else{
+                        elseif($row['authority']==2){
+
+                            echo("<script>location='../homepage/quanly.php'</script>");
+                        }else{
                             echo("<script>location='../homepage/giaovien.php'</script>");
                         }
                         
