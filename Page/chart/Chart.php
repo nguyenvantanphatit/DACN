@@ -53,9 +53,9 @@
                 {
                     if($list[$i][$j]>25)
                     {
-                        if($list[$i][$j]>50)
+                        if($list[$i][$j]>50 && $list[$i][$j]>80)
                         {
-                                $count80++;
+                            $count80++;
                         }
                         else{
                             $count50++;
@@ -547,7 +547,7 @@
                   while($row=$result->fetch_assoc()){
                       $count++;
                   }
-                  if($count>10){
+                  if($count>=10){
                       echo('
                       <div algin="center"><h3>Giảng Viên:'.$_GET['name'].'</h3></div>
                       <div class="row">
