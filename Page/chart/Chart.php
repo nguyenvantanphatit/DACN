@@ -550,6 +550,7 @@
                   if($count>=10){
                       echo('
                       <div algin="center"><h3>Giảng Viên:'.$_GET['name'].'</h3></div>
+                      <h5 style="color:Gray">Đánh Giá Được Dựa Trên: '.$count.' Đánh Giá</h5>
                       <div class="row">
                       <div class="col-6">
                           <div class="card" style="margin-top:20%;width:100%">
