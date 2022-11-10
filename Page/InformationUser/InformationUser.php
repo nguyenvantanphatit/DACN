@@ -25,32 +25,33 @@
 
         <!-- Sidebar Start -->
         <?php
-        if(!empty($_COOKIE['checkGV']))
+         $quyen=$_COOKIE['checkGV'];
+        if(!empty($quyen))
         {
             if($_COOKIE['checkGV']==1 || $_COOKIE['checkGV']==2 )
             { 
-            echo(' <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-light navbar-light">
-                <a href="#" class="navbar-brand mx-4 mb-3">
-                    <img src="/DACN/img/logohutech.png" alt="" style="width: 200px; height: 45px;">
-                </a>
-                <div class="navbar-nav w-100">
-                <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
-                    <a href="/DACN/Page/Lichday/Lichday.php" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Lịch dạy</a>
-                    <a href="/DACN/Page/chart/Chart.php?idTeacher=?&name=?" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bars me-2"></i> Khác</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Đăng xuất</a>
-                            <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
+                echo(' <div class="sidebar pe-4 pb-3">
+                <nav class="navbar bg-light navbar-light">
+                    <a href="#" class="navbar-brand mx-4 mb-3">
+                        <img src="/DACN/img/logohutech.png" alt="" style="width: 200px; height: 45px;">
+                    </a>
+                    <div class="navbar-nav w-100">
+                    <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
+                        <a href="/DACN/Page/Lichday/Lichday.php" class="nav-item nav-link"><i class="fa fa-calendar me-2"></i>Lịch dạy</a>
+                        <a href="/DACN/Page/chart/Chart.php?idTeacher=?&name=?" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fa fa-bars me-2"></i> Khác</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Đăng xuất</a>
+                                <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
+                            </div>
                         </div>
+                        <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                        
                     </div>
-                    <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
-                    
-                </div>
-            </nav>
-        </div>');
+                </nav>
+            </div>');
             }
             else{
                 echo(' <div class="sidebar pe-4 pb-3">

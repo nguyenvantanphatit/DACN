@@ -120,7 +120,7 @@
                         </div>');
                         }
                         else{
-                            echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                            echo("<script> var a=conf   irm('Login False! Please Check Your Input!');
                                 if(a==true)
                                 {
                                     location='../Login/logout.php';
