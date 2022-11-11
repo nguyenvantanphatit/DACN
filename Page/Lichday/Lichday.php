@@ -106,7 +106,7 @@
                         </div>
                         </div>');
                         }else{
-                            echo("<script> var a=confirm('Login False! Please Check Your Input!');
+                            echo("<script> var a=confirm('Login Fail! Please Check Your Input!');
                                 if(a==true)
                                 {
                                     location='../../Login/logout.php';
@@ -138,10 +138,11 @@
                                 $bor=$_GET['id']+1;
                                 $forb=$id*7;
                                 $startDay = new DateTime();
-                                $startDay->modify('+'.$forb.' day');
+                                $countday=$startDay->modify('+'.$forb.' day');
+                                $sqlDay=$countday->format("d/m/Y");
+                                $displayStartDay=$startDay->format("d/m/Y");
                                 $endDay=$startDay->modify("+7 day");
-                                $displayStartDay=$startDay->format("d-m-Y");
-                                $displayEndDay=$endDay->format("d-m-Y");
+                                $displayEndDay=$endDay->format("d/m/Y");
                                 echo('<form action="" style="margin-left: 45%;" method="get">
                                 <input type="text" name="id" style="display: none;" value="'.$for.'"></input>
                                 <input type="submit" value="<-"></input>
@@ -163,53 +164,88 @@
                     $datetime->modify('+'.$day1.' day');
                     $datetime1 = new DateTime();
                     $datetime1->modify('+'.$day.' day');
-                echo(' <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">Ngày</th>
-                    <th scope="col">Tiết</th>
-                    <th scope="col">Mã Môn học - Tên môn</th>
-                    <th scope="col">Thông tin tiết dạy</th>
-                    </tr>
-                </thead><tbody>');   
-                
-                $date0= $datetime->format("m");
-                $date1= $datetime1->format("m");
+                    //START IMPORT SCHEDULE FOR AUTHORITY 3 ONLY
+                    $id=$_COOKIE['checkLogin'];
+                    $sql="SELECT * FROM `taikhoan` WHERE `authority`=3 AND `ID` =".$id;
+                    $result=$conn->query($sql);
+                    $row=$result->fetch_assoc();
+                    if(!empty($row)){
+                        echo(' 
+                            <div class="outer-container">
+                                <form action="SampleFile.php" method="post" name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <div>
+                                    <div style="margin-top: 10px; margin: 10px;">
+                                <h3 style="text-align: center; color: red;">Chú ý!!</h3>
+                                <h4 style="display: inline-flex; margin-right: 50px;">Để tránh xảy ra lỗi, xin hãy dùng bản mẫu dưới đây để import!!</h4>   
+                                <a href="SampleFile.php" download>Nhấp vào đây để tải file mẫu!!</input></a>
+                            </div>
+                            </div>
+                            </form>
+                            <form method="post" action="Import.php" enctype="multipart/form-data">
+                                <div>Hãy chọn file excel để import!!</div>
+                                <input type="file" name="excel" required value=""/>
+                                <button type="submit" name="import">Import</button>
+                            </form>
+                        </form>
+                        </div>');
+                    }
+                    //END IMPORT SCHEDULE FOR AUTHORITY 3 ONLY
+                echo('
+                    <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Ngày</th>
+                        <th scope="col">Tiết</th>
+                        <th scope="col">Mã Môn học - Tên môn</th>
+                        <th scope="col">Thông tin tiết dạy</th>
+                        </tr>
+                    </thead><tbody>'); 
                 $list=array();
                 $id=$_COOKIE['checkLogin'];
-                for($i=2;$i<=8;$i++)
-                {
-                    $tam='THỨ '.$i;
-                    $sql="  SELECT * FROM `schedule` WHERE `Day`= '$tam' AND `idTeacher`=$id";
-                    $result=$conn->query($sql);
+                $sql="SELECT * FROM `schedule` WHERE `idTeacher`=$id";
+                $result=$conn->query($sql);
+    
                 while($row= $result->fetch_assoc())
-                {
-                    $date3=explode("/", $row["endStudying"]);
-                    $date2=explode("/", $row["startStudying"]);      
-                    if($date2[1]<=$date0 && $date3[1]>=$date1)
-                    {   
-                        
-                         if($date2[0]<=$date0 || $date3[0]>=$date0 )
-                         {
-                            array_push($list,$row);
-                          }
-                    }
+                {    
                    
-                } 
-                
+                    $start=$row['startStudying'];
+                    $end=$row['endStudying'];
+                    //
+                        if((sosanh($sqlDay,$start)==$sqlDay && sosanh($end,$sqlDay)==$end)){
+                            array_push($list,$row);                   
+                        }
+                }
+                function phantach($time){
+                    $daphantach = explode('/',$time);
+                    return  $daphantach;
+                }
+                function sosanh($time, $time2){
+                    if($time[2]>=$time2[2]){
+                        return $time;
+                        if($time[1]>=$time2[1]){
+                            return $time;
+                            if($time[0]>=$time2[0]){
+                                return $time;
+                            }else{
+                                return $time2;
+                            }
+                        }else{
+                            return $time2;
+                        }
+                    }else{
+                        return $time2;
+                    }
                 }
                 for($i=0;$i<count($list);$i++)
                 {
                 echo('
                 <tr>
-                <th rowspan="2" scope="row">'.$list[$i]['Day'].'</th>
-                <td>'.$list[$i]['Lesson'].'</td>
-                <td>'.$list[$i]['Subjects'].'</td>
-                <td>'.$list[$i]['Room'].'</td>
-                </tr>');
-                echo('
-                </tbody>
-                '); 
+                    <th rowspan="2" scope="row">'.$list[$i]['Day'].'</th>
+                    <td>'.$list[$i]['Lesson'].'</td>
+                    <td>'.$list[$i]['Subjects'].'</td>
+                    <td>'.$list[$i]['Room'].'</td>
+                    </tr>');
+                    echo('</tbody>'); 
                 }
                ?>
                     </table>
