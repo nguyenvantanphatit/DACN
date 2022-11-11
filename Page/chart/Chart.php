@@ -24,16 +24,32 @@
     require "../../ConnectDB.php";
     $id=$_COOKIE['checkLogin'];
     $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND b.`idUser`='$id'";
-    if($_COOKIE['checkGV']==2)
+    if($_COOKIE['checkGV']==2 || $_COOKIE['checkGV']==3)
     {
         $getId= $_GET['idTeacher'];
-        if(!empty($_GET['class']))
+        if($_GET['class']=="?" && $_GET['subject']=="?")
         {
-            $class= $_GET['class'];
-            $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`Class`= '$class' ";
+            $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId'";
         }
         else{
-            $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId'";
+            if($_GET['class']=="?" && $_GET['subject']!="?")
+            {
+                $subject= $_GET['subject'];
+                $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`nameSubject`= '$subject' ";
+            }
+            else{
+                if($_GET['class']!="?" && $_GET['subject']=="?")
+                {
+                    $Class=$_GET['class'];
+                    $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`Class`= '$Class' ";
+                }else{
+                $class=$_GET['class'];
+                $subject= $_GET['subject'];
+                $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`nameSubject`= '$subject' AND a.`Class`='$class' ";
+                                    
+                }
+            }
+          
         }
        
       
@@ -536,6 +552,8 @@
                     $result=$conn->query($sql);
                     $get_idTeacher = $_GET['idTeacher'];
                     $get_name=$_GET['name'];
+                    $get_class=$_GET['class'];
+                    $get_subject=$_GET['subject'];
                     $count=0;
                     echo('<div class="btn-group dropend">
                     <button type="button" class="btn btn-secondary">
@@ -546,7 +564,7 @@
                     </button>
                     <ul class="dropdown-menu">');
                     while($row=$result->fetch_assoc()){
-                        echo('<li><a class="dropdown-item" href="?idTeacher='.$row['ID'].'&name='.$row['nameUser'].'" type="button">'.$row['nameUser'].'</a></li>');
+                        echo('<li><a class="dropdown-item" href="?idTeacher='.$row['ID'].'&name='.$row['nameUser'].'&class=?&subject=?" type="button">'.$row['nameUser'].'</a></li>');
                     }
                 
                      echo('
@@ -565,17 +583,69 @@
                     </button>
                     <ul class="dropdown-menu">');
                     while($row=$result->fetch_assoc()){
-                        echo(' <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class='.$row['Class'].'" type="button">'.$row['Class'].'</a></li>');
+                        echo(' <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class='.$row['Class'].'&subject='.$get_subject.'" type="button">'.$row['Class'].'</a></li>');
                        
                     }
                     echo('  
-                    <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'" type="button">Tất Cả</a></li>
+                    <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class=?&subject=?" type="button">Tất Cả</a></li>
                     </ul>
                 </div>
+                ');
+                $sql="SELECT a.`nameSubject` FROM `surveyresults` a,`userInformation` b WHERE a.`idUserTeacher`='$get_idTeacher'  AND b.faculty=(SELECT faculty FROM `userinformation` c WHERE c.IdUser='$id') GROUP BY `nameSubject`;";
+                $result=$conn->query($sql);
+                echo('
+                    <div style="display:flex; margin-top:10px">
+                    <button style="width:14%" type="button" class="btn btn-secondary">
+                        Chọn Môn
+                    </button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropright</span>
+                    </button>
+                    <ul class="dropdown-menu">');
+                    while($row=$result->fetch_assoc()){
+                        echo(' <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class='.$get_class.'&subject='.$row['nameSubject'].'" type="button">'.$row['nameSubject'].'</a></li>');
+                       
+                    }
+                    echo('  
+                    <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class=?&subject=?" type="button">Tất Cả</a></li>
+                    </ul>
+                </div>
+                ');
+                echo('
                 <hr> 
                   ');
                   $idTeacher=$_GET['idTeacher'];
                   $sql="SELECT * FROM `surveyresults`a,`userInformation` b WHERE a.`IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`= '$idTeacher'";
+                  $id=$_COOKIE['checkLogin'];
+                    $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND b.`idUser`='$id'";
+                    if($_COOKIE['checkGV']==2)
+                    {
+                        $getId= $_GET['idTeacher'];
+                        if($_GET['class']=="?" && $_GET['subject']=="?")
+                        {
+                            $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId'";
+                        }
+                        else{
+                            if($_GET['class']=="?" && $_GET['subject']!="?")
+                            {
+                                $subject= $_GET['subject'];
+                                $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`nameSubject`= '$subject' ";
+                            }
+                            else{
+                                if($_GET['class']!="?" && $_GET['subject']=="?")
+                                {
+                                    $class=$_GET['class'];
+                                    $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`Class`= '$class' ";
+                                }else{
+                                $class=$_GET['class'];
+                                $subject= $_GET['subject'];
+                                $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`nameSubject`= '$subject' AND a.`Class`='$class' ";
+                                                    
+                                }
+                            }
+                        
+                        }
+                    }
                   $result=$conn->query($sql);
                   $count=0;
                   while($row=$result->fetch_assoc()){
@@ -711,24 +781,100 @@
                     {
                         $sql="SELECT b.`ID`,`nameUser` FROM `userInformation`b,`taikhoan` a WHERE a.`id`= b.`idUser` AND a.`authority`=1 ";
                         $result=$conn->query($sql);
+                        $get_idTeacher = $_GET['idTeacher'];
+                        $get_name=$_GET['name'];
+                        $get_class=$_GET['class'];
+                        $get_subject=$_GET['subject'];
                         $count=0;
                         echo('<div class="btn-group dropend">
-                        <button type="button" class="btn btn-secondary">
-                          Chọn Giảng Viên
-                        </button>
-                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span class="visually-hidden">Toggle Dropright</span>
-                        </button>
-                        <ul class="dropdown-menu">');
-                        while($row=$result->fetch_assoc()){
-                            echo('<li><a class="dropdown-item" href="?idTeacher='.$row['ID'].'&name='.$row['nameUser'].'" type="button">'.$row['nameUser'].'</a></li>');
-                        }
-                         echo('
-                        </ul>
-                      </div><hr>
-                      ');
+                    <button type="button" class="btn btn-secondary">
+                      Chọn Giảng Viên
+                    </button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="visually-hidden">Toggle Dropright</span>
+                    </button>
+                    <ul class="dropdown-menu">');
+                    while($row=$result->fetch_assoc()){
+                        echo('<li><a class="dropdown-item" href="?idTeacher='.$row['ID'].'&name='.$row['nameUser'].'&class=?&subject=?" type="button">'.$row['nameUser'].'</a></li>');
+                    }
+                
+                     echo('
+                     
+                    </ul>           
+                </div>');
+                $sql="SELECT a.`Class` FROM `surveyresults` a,`userInformation` b WHERE a.`idUserTeacher`='$get_idTeacher'  GROUP BY `Class`;";
+                $result=$conn->query($sql);
+            echo('
+             <div style="display:flex; margin-top:10px">
+                    <button style="width:14%" type="button" class="btn btn-secondary">
+                        Chọn lớp
+                    </button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropright</span>
+                    </button>
+                    <ul class="dropdown-menu">');
+                    while($row=$result->fetch_assoc()){
+                        echo(' <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class='.$row['Class'].'&subject='.$get_subject.'" type="button">'.$row['Class'].'</a></li>');
+                       
+                    }
+                    echo('  
+                    <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class=?&subject=?" type="button">Tất Cả</a></li>
+                    </ul>
+                </div>
+                ');
+                $sql="SELECT a.`nameSubject` FROM `surveyresults` a,`userInformation` b WHERE a.`idUserTeacher`='$get_idTeacher'  AND b.faculty=(SELECT faculty FROM `userinformation` c WHERE c.IdUser='$id') GROUP BY `nameSubject`;";
+                $result=$conn->query($sql);
+                echo('
+                    <div style="display:flex; margin-top:10px">
+                    <button style="width:14%" type="button" class="btn btn-secondary">
+                        Chọn Môn
+                    </button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropright</span>
+                    </button>
+                    <ul class="dropdown-menu">');
+                    while($row=$result->fetch_assoc()){
+                        echo(' <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class='.$get_class.'&subject='.$row['nameSubject'].'" type="button">'.$row['nameSubject'].'</a></li>');
+                       
+                    }
+                    echo('  
+                    <li><a class="dropdown-item" href="?idTeacher='.$get_idTeacher.'&name='.$get_name.'&class=?&subject=?" type="button">Tất Cả</a></li>
+                    </ul>
+                </div>
+                ');
+                echo('
+                <hr> 
+                  ');
                       $idTeacher=$_GET['idTeacher'];
                       $sql="SELECT * FROM `surveyresults`a,`userInformation` b WHERE a.`IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`= '$idTeacher'";
+                      if($_COOKIE['checkGV']==2 ||$_COOKIE['checkGV']==3)
+                      {
+                          $getId= $_GET['idTeacher'];
+                          if($_GET['class']=="?" && $_GET['subject']=="?")
+                          {
+                              $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId'";
+                          }
+                          else{
+                              if($_GET['class']=="?" && $_GET['subject']!="?")
+                              {
+                                  $subject= $_GET['subject'];
+                                  $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`nameSubject`= '$subject' ";
+                              }
+                              else{
+                                  if($_GET['class']!="?" && $_GET['subject']=="?")
+                                  {
+                                      $class=$_GET['class'];
+                                      $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`Class`= '$class' ";
+                                  }else{
+                                  $class=$_GET['class'];
+                                  $subject= $_GET['subject'];
+                                  $sql="SELECT a.`IdUser`,`IdUserTeacher`,`Tprepare`,`TContent`,`TMethod`,`testingMethod`,`TRules`,`professionalManner` FROM `surveyresults` a,`userInformation` b WHERE `IdUserTeacher`=b.`ID` AND a.`IdUserTeacher`='$getId' AND a.`nameSubject`= '$subject' AND a.`Class`='$class' ";
+                                                      
+                                  }
+                              }
+                          
+                          }
+                      }
                       $result=$conn->query($sql);
                       $count=0;
                       while($row=$result->fetch_assoc()){
