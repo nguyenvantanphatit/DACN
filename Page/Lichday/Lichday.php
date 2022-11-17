@@ -177,7 +177,7 @@
                                     <div style="margin-top: 10px; margin: 10px;">
                                 <h3 style="text-align: center; color: red;">Chú ý!!</h3>
                                 <h4 style="display: inline-flex; margin-right: 50px;">Để tránh xảy ra lỗi, xin hãy dùng bản mẫu dưới đây để import!!</h4>   
-                                <a href="SampleFile.php" download>Nhấp vào đây để tải file mẫu!!</input></a>
+                                <a href="SampleFile.php?file=Sample.xlsx" download>Nhấp vào đây để tải file mẫu!!</input></a>
                             </div>
                             </div>
                             </form>
