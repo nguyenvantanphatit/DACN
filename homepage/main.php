@@ -35,8 +35,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                 class="fa fa-laptop me-2"></i>Học Tập</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item">Thời Khoá Biểu</a>
-                            <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
+                            <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item"><i class="fa fa-calculator" style='margin-right:5px'></i>Thời Khoá Biểu</a>
+                            <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item"><i class="fa fa-graduation-cap" style='margin-right:5px'></i>Lớp</a>
                         </div>
                     </div>
                     <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
@@ -45,8 +45,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-bars me-2"></i> Khác</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                            <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                            <a href="/DACN/Login/logout.php" class="dropdown-item"><i class="fa fa-times" style='margin-right:5px'></i>Đăng xuất</a>
+                            <a href="/DACN/Login/logout.php" class="dropdown-item"><i class="fa fa-times-circle" style='margin-right:5px'></i>Thoát</a>
                         </div>
                     </div>
                     <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
@@ -160,7 +160,7 @@
                         <?php
                    
                         ?>
-                        <h2 style= "color:blue">Thong bao</h2>
+                        <h2 style= "color:blue">Thông báo</h2>
                         <h3 style= "color:red">App e-HUTECH bổ sung tính năng</h3>
                         <p>Tin mới!!! App e-HUTECH bổ sung tính năng cung cấp Khóa học trực tuyến (mini course) giá ưu đãi</p>
                     </div>

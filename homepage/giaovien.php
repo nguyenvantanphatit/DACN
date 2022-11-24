@@ -41,7 +41,7 @@
                             <a href="/DACN/Login/logoutgiaovien.php" class="dropdown-item"><i class="fa fa-chart-bar me-2"></i>Thoát</a>
                         </div>
                     </div>
-                    <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
+                    <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
                    
                 </div>
             </nav>
@@ -147,7 +147,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
-                        <h2 style= "color:blue">Thong bao</h2>
+                        <h2 style= "color:blue">Thông báo</h2>
                         <h3 style= "color:red">App e-HUTECH bổ sung tính năng</h3>
                         <p>Tin mới!!! App e-HUTECH bổ sung tính năng cung cấp Khóa học trực tuyến (mini course) giá ưu đãi</p>
                     </div>

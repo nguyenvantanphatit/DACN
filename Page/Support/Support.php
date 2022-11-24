@@ -64,8 +64,8 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                     class="fa fa-laptop me-2"></i>Học Tập</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item">Thời Khoá Biểu</a>
-                                <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
+                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item"><i class="fa fa-calculator" style="margin-right:5px"></i>Thời Khoá Biểu</a>
+                                <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item"><i class="fa fa-graduation-cap" style="margin-right:5px"></i>Lớp</a>
                             </div>
                         </div>
                         <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
@@ -74,8 +74,8 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <i class="fa fa-bars me-2"></i> Khác</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                                <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                                <a href="/DACN/Login/logout.php" class="dropdown-item"><i class="fa fa-times" style="margin-right:5px"></i>Đăng xuất</a>
+                                <a href="/DACN/Login/logout.php" class="dropdown-item"><i class="fa fa-times-circle" style="margin-right:5px"></i>Thoát</a>
                             </div>
                         </div>
                         <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
@@ -92,7 +92,7 @@
         ?>
         <!-- Sidebar End -->
 
-
+        
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
@@ -185,7 +185,35 @@
             </nav>
             <!-- Navbar End -->
            
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <h2 style= "color:red">Địa chỉ các cơ sở học của trường:</h2>
+                        <p>Ký hiệu phòng: A, B: 475A Điện Biên Phủ, P.25, Q.Bình Thạnh, TP.HCM</p>
+                        <p> Ký hiệu phòng: U: 31/36 Ung Văn Khiêm, P.25, Q.Bình Thạnh, TP.HCM</p>
+                        <p>Ký hiệu phòng: E: Phân khu đào tạo E1, Khu Công Nghệ cao TP.HCM, Phường Hiệp Phú, TP. Thủ Đức, TP.HCM</p>
+                        <p>Ký hiệu phòng: R: Viện Công nghệ Cao Hutech, Lô E2B4, đường D1, Phường Long Thạnh Mỹ, khu Công Nghệ Cao, TP. Thủ Đức, TP.HCM</p>
+                        <p></p>
+                    </div>
+                    <div class="row">
+                        <h2 style= "color:red">Ký hiệu sân Quốc phòng và an ninh</h2>
+                        <p> Khu E: E2-01.01, E2-01.02</p>
+                        <p>Khu U: U-12.01, U-12.02, U-12.03</p>
+                        <p>Khu R:
 
+                        Sân quốc phòng: R1-04.01, R1-04.02, R1-04.03, R1-04.04, R1-04.05, R1-04.06, R1-05.01, R1-05.02, R1-05.03, R1-05.04, R1-05.05, R1-05.06
+                        Sân quốc phòng ngoài trời: R3.01, R3.02, R3.03, R3.04, R3.05, R3.06
+                        </p>
+                    </div>
+                    <div class="row">
+                    <h2 style= "color:red">Thời gian học</h2>
+                    <p>Buổi sáng: Ca 1 (tiết 1,2,3): từ 06g45' đến 09g00' - Ca 2 (tiết 4,5,6): từ 09g20' đến 11g35'</p>
+                   <p>Buổi chiều: Ca 3 (tiết 7,8,9): từ 12g30' đến 14g45' - Ca 4 (tiết 10,11,12): từ 15g05' đến 17g20'</p>
+                   <p>Buổi tối: Ca 5 (tiết 13,14,15): từ 18g00' đến 20g15'</p>
+                    </div>
+                    
+                </div>              
+            </div>
         <!-- Footer Start -->
         <footer class="bg-lighskyblue text-center text-black">
             <!-- Grid container -->

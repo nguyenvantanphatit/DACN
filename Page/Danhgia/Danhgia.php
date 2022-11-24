@@ -224,7 +224,7 @@
             <!-- Chỉnh sửa  -->
             
                    <!-- Footer Start -->
-    <footer class="bg-lighskyblue text-center text-black">
+    <footer class="bg-lighskyblue text-center text-black" style='margin-top: 320px;'>
             <!-- Grid container -->
             <div class="container p-4 pb-0">
             <!-- Section: Social media -->

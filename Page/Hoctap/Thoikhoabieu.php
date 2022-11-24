@@ -39,8 +39,8 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                                     class="fa fa-laptop me-2"></i>Học Tập</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item">Thời Khoá Biểu</a>
-                                <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item">Lớp</a>
+                                <a href="/DACN/Page/Hoctap/Thoikhoabieu.php?id=0" class="dropdown-item"><i class="fa fa-calculator" style="margin-right:5px"></i>Thời Khoá Biểu</a>
+                                <a href="/DACN/Page/Hoctap/Lop.php" class="dropdown-item"><i class="fa fa-graduation-cap" style="margin-right:5px"></i>Lớp</a>
                             </div>
                         </div>
                         <a href="/DACN/Page/Danhgia/Danhgia.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Khảo sát</a>
@@ -49,8 +49,8 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 <i class="fa fa-bars me-2"></i> Khác</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="/DACN/Login/logout.php" class="dropdown-item">Đăng xuất</a>
-                                <a href="/DACN/Login/logout.php" class="dropdown-item">Thoát</a>
+                                <a href="/DACN/Login/logout.php" class="dropdown-item"><i class="fa fa-times" style="margin-right:5px"></i>Đăng xuất</a>
+                                <a href="/DACN/Login/logout.php" class="dropdown-item"><i class="fa fa-times-circle" style="margin-right:5px"></i>Thoát</a>
                             </div>
                         </div>
                         <a href="/DACN/Page/Support/Support.php" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>Hỗ trợ</a>
@@ -158,7 +158,7 @@
             <div class="container-fluid pt-4 px-4">
                     <div class="row g-0 text-center">
                         <div class="col-6 col-md-4">
-                            <h2><i class="bi bi-calendar"></i>Thời Khoá Biểu</h2>
+                            <h2 ><i class="bi bi-calendar" style='margin-right: 10px;'></i>Thời Khoá Biểu</h2>
                         </div>
                         <div class="col-sm-6 col-md-8 tam">
                         
@@ -174,8 +174,7 @@
                                 echo('<form action="" method="get">
                                 <input type="text" class="an" name="id" value="'.$id1.'">
                                 <input type="submit" value="<-"></input>
-                                </form>
-
+                                </form >
                                 Từ ngày '.$datetime->format('Y-m-d').' đến '.$datetime1->format('Y-m-d').'
                                 <form action="" method="get">
                                 <input type="text" class="an" name="id" value="'.$id2.'">
@@ -244,7 +243,7 @@
                     </table>
             </div>
                   <!-- Footer Start -->
-    <footer class="bg-lighskyblue text-center text-black">
+    <footer class="bg-lighskyblue text-center text-black " style='margin-top: 215px;'>
             <!-- Grid container -->
             <div class="container p-4 pb-0">
             <!-- Section: Social media -->

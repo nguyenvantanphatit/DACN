@@ -131,7 +131,7 @@
             <div class="container-fluid pt-4 px-4">
                     <div class="row g-0 text-center">
                         <div class="col-6 col-md-4" style="display: inline-flex; width: 100%;">
-                            <h2 style="margin-left: 5%;"><i class="bi bi-calendar"></i>Lịch dạy</h2>
+                            <h2 style="margin-left: 5%;"><i class="bi bi-calendar" style='margin-right:10px'></i>Lịch dạy</h2>
                             <?php
                                 $id=$_GET['id'];
                                 $for=$_GET['id']-1;
@@ -253,7 +253,7 @@
 
 
             <!-- Footer Start -->
-            <footer class="bg-lighskyblue text-center text-black">
+            <footer class="bg-lighskyblue text-center text-black" style='margin-top: 350px;'>
             <!-- Grid container -->
             <div class="container p-4 pb-0">
             <!-- Section: Social media -->
