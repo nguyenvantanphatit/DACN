@@ -211,7 +211,8 @@
                     $start=$row['startStudying'];
                     $end=$row['endStudying'];
                     //
-                        if((sosanh($sqlDay,$start)==$sqlDay && sosanh($end,$sqlDay)==$end)){
+                   
+                        if(sosanh($sqlDay,$start)== 1 && sosanh($end,$sqlDay)== 1 ){   
                             array_push($list,$row);                   
                         }
                 }
@@ -220,24 +221,37 @@
                     return  $daphantach;
                 }
                 function sosanh($time, $time2){
-                    if($time[2]>=$time2[2]){
-                        return $time;
-                        if($time[1]>=$time2[1]){
-                            return $time;
-                            if($time[0]>=$time2[0]){
-                                return $time;
+                    $time =phantach($time);
+                    $time2=phantach($time2);
+                    if($time[2]==$time2[2]){
+                        if($time[1]==$time2[1]){
+                            if($time[0]<$time2[0]){
+                                return 0;
                             }else{
-                                return $time2;
+                                return 1;
                             }
                         }else{
-                            return $time2;
+                            if($time[1]>$time2[1])
+                                {
+                                        return 1;
+                                }
+                                else{
+                                        return 0;
+                                }
                         }
                     }else{
-                        return $time2;
+                       if($time[2]>$time2[2])
+                       {
+                            return 1;
+                       }
+                       else{
+                            return 0;
+                       }
                     }
                 }
-                for($i=0;$i<count($list);$i++)
+                for($i=count($list)-1;$i>=0;$i--)
                 {
+                   
                 echo('
                 <tr>
                     <th rowspan="2" scope="row">'.$list[$i]['Day'].'</th>

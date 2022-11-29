@@ -31,7 +31,7 @@
                 </a>
                 <div class="navbar-nav w-100">
                 <a href="/DACN/homepage/giaovien.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Trang Chủ</a>
-                    <a href="/DACN/Page/chart/Chart.php?idTeacher=?&name=?&?class=?&?subject=?" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
+                    <a href="/DACN/Page/chart/Chart.php?idTeacher=?&name=?&class=?&subject=?" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Biểu đồ</a>
                     <a href="/DACN/Page/Lichday/Lichday.php?id=0" class="nav-item nav-link"><i class="fa fa-calendar"></i>Lịch dạy</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

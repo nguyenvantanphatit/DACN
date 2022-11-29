@@ -555,12 +555,12 @@
                     $get_class=$_GET['class'];
                     $get_subject=$_GET['subject'];
                     $count=0;
-                    echo('<div class="btn-group dropend">
-                    <button type="button" class="btn btn-secondary">
-                      Chọn Giảng Viên
+                    echo('<div style="display:flex; margin-top:10px">
+                    <button style="width:14%" type="button" class="btn btn-secondary">
+                        Chọn GV
                     </button>
                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span class="visually-hidden">Toggle Dropright</span>
+                        <span class="visually-hidden">Toggle Dropright</span>
                     </button>
                     <ul class="dropdown-menu">');
                     while($row=$result->fetch_assoc()){
@@ -660,6 +660,7 @@
                       {
                         echo(' <h5 style="color:Black">Lớp '.$_GET['class'].'</h5>');
                       }
+
                      echo('
                       <div class="row">
                       <div class="col-6">
@@ -786,13 +787,13 @@
                         $get_class=$_GET['class'];
                         $get_subject=$_GET['subject'];
                         $count=0;
-                        echo('<div class="btn-group dropend">
-                    <button type="button" class="btn btn-secondary">
-                      Chọn Giảng Viên
-                    </button>
-                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span class="visually-hidden">Toggle Dropright</span>
-                    </button>
+                        echo('<div style="display:flex; margin-top:10px">
+                        <button style="width:14%" type="button" class="btn btn-secondary">
+                            Chọn GV
+                        </button>
+                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropright</span>
+                        </button>
                     <ul class="dropdown-menu">');
                     while($row=$result->fetch_assoc()){
                         echo('<li><a class="dropdown-item" href="?idTeacher='.$row['ID'].'&name='.$row['nameUser'].'&class=?&subject=?" type="button">'.$row['nameUser'].'</a></li>');
@@ -1005,8 +1006,12 @@
                 ?>
                 
             </div>
-
-
+            <?php
+            $url =$_SERVER['REQUEST_URI'];
+            $url =str_replace("Chart.php","Feedback.php","$url");
+            echo('
+            <a href="'.$url.'"><button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:100px;margin-left:20%;margin-right:20%;width:60%;">Submit</button></a>
+           ');?>
             <!-- Footer Start -->
             <footer class="bg-lighskyblue text-center text-black">
             <!-- Grid container -->

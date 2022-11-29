@@ -552,19 +552,7 @@
                             </div>
                             <div class="container-fluid pt-4 px-4">
                                 <div class="row form-group">
-                                    <label class=" form-control-label">Những khó khăn trong quá trình học trên lớp với thầy cô</label>
-                                    <input type="text">
-                                </div>
-                                <div class="row form-group">
-                                    <label class=" form-control-label">Những hạn chế của về cơ sở hạ tầng </label>
-                                    <input type="text">
-                                </div>
-                                <div class="row form-group">
-                                    <label class=" form-control-label">Những bất lợi khi việc kẹt xe lúc ra về</label>      
-                                    <input type="text">
-                                </div>
-                                <div class="row form-group">
-                                    <label class=" form-control-label">Những bất lợi về phòng thực hành máy tính</label>  
+                                    <label class=" form-control-label">Để Lại 1 FeedBack Về Giảng Viên Trên</label>
                                     <input type="text">
                                 </div>
                                
