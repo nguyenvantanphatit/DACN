@@ -553,8 +553,8 @@
                             <div class="container-fluid pt-4 px-4">
                                 <div class="row form-group">
                                     <label class=" form-control-label">Để Lại 1 FeedBack Về Giảng Viên Trên</label>
-                                    <input type="text">
-                                </div>
+                                    <input type="text" name='comment'>
+                                </div> 
                                
                                 <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:10px">Đánh giá</button>
                                 <input type="text" name="idTeacher" style='display:none' value='<?php $id=$_GET['idTeacher'];

@@ -13,7 +13,7 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="/DACN/css/chart.css" rel="stylesheet">
@@ -294,6 +294,7 @@
                       if(!empty($_GET['class']))
                       {
                         echo(' <h5 style="color:Black">Lớp '.$_GET['class'].'</h5>');
+                        
                       }
                       //add feedback here
                       echo("
@@ -315,18 +316,47 @@
                                 ");
                             $sqlSe="SELECT * FROM `feedback` WHERE `idUserTeacher`=$idTeacher";
                             $result1= $conn->query($sqlSe);
+                        
+                            $i=0;
+                            $variable=array();
+                            $variable1=array();
                             while($row=$result1->fetch_assoc())
                             {
-                                echo("<h6>".$row['Feedback']."</h6><hr>");
+                                if($row['good']>=0.3)
+                                {
+                                    array_push($variable, $row['Feedback']);
+                                }
+                                else
+                                {
+                                if($row['bad']>=0.7)
+                                {
+                                    array_push($variable1, $row['Feedback']);
+                                }
+                                else{
+                                    array_push($variable, $row['Feedback']);
+                                }
+                                }
                             }
-
-                    echo("
+                            for($i=0;$i<count($variable);$i++)
+                            {
+                                echo("<h5>".$variable[$i]."</h5>");
+                                echo("<hr>"); 
+                            }
+                            echo("<hr>"); 
+                           
+                            echo("
                             </h5>
-                        </div>
-                        <div class='col-6' style='border:3px solid gray'>
-                            <h5>
-                               Nội Dung 2
-                            </h5>
+                            </div>
+                            <div class='col-6' style='border:3px solid gray'>
+                            
+                            ");
+                            for($i=0;$i<count($variable1);$i++)
+                            {
+                                echo("<h5 style='margin-top:10px'>".$variable1[$i]."</h6>");
+                                echo("<hr>"); 
+                            }
+                        echo("
+                            
                         </div>
                     </div>
                       ");
@@ -438,9 +468,80 @@
                           $count++;
                       }
                       if($count>=10){
-                          echo('
-                          <div algin="center"><h3>Giảng Viên:'.$_GET['name'].'</h3></div>
-                          <h5 style="color:Gray">Đánh Giá Được Dựa Trên: '.$count.' Đánh Giá</h5>');
+                        echo('
+                        <div algin="center"><h3>Giảng Viên:'.$_GET['name'].'</h3></div>
+                        <h5 style="color:Gray">Đánh Giá Được Dựa Trên: '.$count.' Đánh Giá</h5>
+                        ');
+                        if(!empty($_GET['class']))
+                        {
+                          echo(' <h5 style="color:Black">Lớp '.$_GET['class'].'</h5>');
+                          
+                        }
+                        //add feedback here
+                        echo("
+                      <div class='row' align='center' >
+                              <div class='col-6' style='border:3px solid gray'>
+                                  <h3 style ='margin-top:10px' >
+                                      Tích Cực
+                                  </h3>
+                              </div>
+                              <div class='col-6' style='border:3px solid gray'>
+                                  <h3 style ='margin-top:10px'>
+                                      Tiêu Cực
+                                  </h3>
+                              </div>
+                        </div>
+                      <div class='row' align='center' >
+                          <div class='col-6' style='border:3px solid gray'>
+                              <h5>
+                                  ");
+                              $sqlSe="SELECT * FROM `feedback` WHERE `idUserTeacher`=$idTeacher";
+                              $result1= $conn->query($sqlSe);
+                          
+                              $i=0;
+                              $variable=array();
+                              $variable1=array();
+                              while($row=$result1->fetch_assoc())
+                              {
+                                  if($row['good']>=0.3)
+                                  {
+                                      array_push($variable, $row['Feedback']);
+                                  }
+                                  else
+                                  {
+                                  if($row['bad']>=0.7)
+                                  {
+                                      array_push($variable1, $row['Feedback']);
+                                  }
+                                  else{
+                                      array_push($variable, $row['Feedback']);
+                                  }
+                                  }
+                              }
+                              for($i=0;$i<count($variable);$i++)
+                              {
+                                  echo("<h5>".$variable[$i]."</h5>");
+                                  echo("<hr>"); 
+                              }
+                              echo("<hr>"); 
+                             
+                              echo("
+                              </h5>
+                              </div>
+                              <div class='col-6' style='border:3px solid gray'>
+                              
+                              ");
+                              for($i=0;$i<count($variable1);$i++)
+                              {
+                                  echo("<h5 style='margin-top:10px'>".$variable1[$i]."</h6>");
+                                  echo("<hr>"); 
+                              }
+                          echo("
+                              
+                          </div>
+                      </div>
+                        ");
+                        
                           
                       }
                   }

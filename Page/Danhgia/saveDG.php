@@ -15,12 +15,14 @@ require "../../ConnectDB.php";
     VALUES ('$idUser','$idTeacher','$tam1',' $tam2',' $tam3',' $tam4',' $tam5',' $tam6')";
     if($conn->query($sql))
     {
+        
         echo("<script>a= confirm('THANKS YOU!!');
         if(a==true)
         {
-            location='./Danhgia.php';
+            location='./saveCMDG.php?comment=".$_POST['comment']."&idU=$idUser&idT=$idTeacher';
         }
         else{
-            location='./Danhgia.php';} </script>");
+            location='./saveCMDG.php?comment=".$_POST['comment']."&idU=$idUser&idT=$idTeacher';
+        } </script>");
     }
 ?>
