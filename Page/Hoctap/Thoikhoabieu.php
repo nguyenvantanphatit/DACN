@@ -190,8 +190,10 @@
                         $day1=$day-7;
                         $datetime = new DateTime();
                         $datetime->modify('+'.$day1.' day');
+                        
                         $datetime1 = new DateTime();
                         $datetime1->modify('+'.$day.' day');
+                
                     echo(' <table class="table">
                     <thead>
                         <tr>
@@ -202,8 +204,8 @@
                         </tr>
                     </thead><tbody>');   
                     
-                    $date0= $datetime->format("m");
-                    $date1= $datetime1->format("m");
+                    $date0= $datetime->format("d/m/Y");
+                    $date1= $datetime1->format("d/m/Y");
                     $list=array();
                     for($i=2;$i<=8;$i++)
                     {
@@ -212,20 +214,51 @@
                         $result=$conn->query($sql);
                     while($row= $result->fetch_assoc())
                     {
-                        $date3=explode("/", $row["endStudying"]);
-                        $date2=explode("/", $row["startStudying"]);      
-                        if($date2[1]<=$date0 && $date3[1]>=$date1)
-                        {   
-                            
-                             if($date2[0]<=$date0 || $date3[0]>=$date0 )
-                             {
-                                array_push($list,$row);
-                              }
+                         
+                        $start=$row['startStudying'];
+                        $end=$row['endStudying'];
+                        //
+                   
+                        if(sosanh($date1,$start)== 1 && sosanh($end,$date0)== 1 ){   
+                            array_push($list,$row);                   
                         }
                        
                     } 
-                    
                     }
+                    function phantach($time){
+                        $daphantach = explode('/',$time);
+                        return  $daphantach;
+                    }
+                    function sosanh($time, $time2){
+                        $time =phantach($time);
+                        $time2=phantach($time2);
+                        if($time[2]==$time2[2]){
+                            if($time[1]==$time2[1]){
+                                if($time[0]<$time2[0]){
+                                    return 0;
+                                }else{
+                                    return 1;
+                                }
+                            }else{
+                                if($time[1]>$time2[1])
+                                    {
+                                            return 1;
+                                    }
+                                    else{
+                                            return 0;
+                                    }
+                            }
+                        }else{
+                           if($time[2]>$time2[2])
+                           {
+                                return 1;
+                           }
+                           else{
+                                return 0;
+                           }
+                        }
+                    }
+                  
                     for($i=0;$i<count($list);$i++)
                     {
                     echo('

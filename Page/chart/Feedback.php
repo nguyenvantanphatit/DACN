@@ -503,7 +503,7 @@
                               $variable1=array();
                               while($row=$result1->fetch_assoc())
                               {
-                                  if($row['good']>=0.3)
+                                  if($row['good']>=0.4)
                                   {
                                       array_push($variable, $row['Feedback']);
                                   }
