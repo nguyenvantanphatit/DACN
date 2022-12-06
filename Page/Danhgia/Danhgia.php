@@ -175,30 +175,52 @@
                             <?php
                             require '../../ConnectDB.php';
                             $idUser= $_COOKIE['checkLogin'];
-                            $date= getdate();
+                             
+                            $date = new DateTime();
                             $sql="SELECT * FROM `schedule` WHERE `IdUser`=$idUser ";
                             $result=$conn->query($sql);
                             $list= array();
-
+                            $date= $date->format("d/m/Y");
                             while($row=$result->fetch_assoc())
                             {
-                               $date1=explode("/", $row["endStudying"]);
-                             
-                               if($date1[1]<$date['mon'])
-                               {   
-                                array_push($list,$row);
-                               }
-                               else{if($date1[1]==$date['mon'])
-                                    {
-                                        if($date1[0]<=$date['mday'])
-                                        {
-                                            
-                                            array_push($list,$row);
-                                         }
+                               $date1= $row["endStudying"];
+                               
+                               if(sosanh($date,$date1)== 1){   
+                                array_push($list,$row);                   
+                                }
+                            }
+                            function phantach($time){
+                                $daphantach = explode('/',$time);
+                                return  $daphantach;
+                            }
+                            function sosanh($time, $time2){
+                                $time =phantach($time);
+                                $time2=phantach($time2);
+                                if($time[2]==$time2[2]){
+                                    if($time[1]==$time2[1]){
+                                        if($time[0]<$time2[0]){
+                                            return 0;
+                                        }else{
+                                            return 1;
+                                        }
+                                    }else{
+                                        if($time[1]>$time2[1])
+                                            {
+                                                    return 1;
+                                            }
+                                            else{
+                                                    return 0;
+                                            }
                                     }
-
-                               }
-                                
+                                }else{
+                                   if($time[2]>$time2[2])
+                                   {
+                                        return 1;
+                                   }
+                                   else{
+                                        return 0;
+                                   }
+                                }
                             }
                             $i=0;
                             for(;$i<count($list);$i++)
