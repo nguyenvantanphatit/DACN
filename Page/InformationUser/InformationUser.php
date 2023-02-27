@@ -26,9 +26,10 @@
         <!-- Sidebar Start -->
         <?php
          $quyen=$_COOKIE['checkGV'];
+         print_r($quyen);  
         if(!empty($quyen))
         {
-            if($_COOKIE['checkGV']==1 || $_COOKIE['checkGV']==2 )
+            if($quyen==1 || $quyen==2 )
             { 
                 echo(' <div class="sidebar pe-4 pb-3">
                 <nav class="navbar bg-light navbar-light">
@@ -87,7 +88,8 @@
             }
         }
         else{
-            echo("<script>location='/DACN/Login/logout.php'</script>");
+          
+           // echo("<script>location='/DACN/Login/logout.php'</script>");
         }
        
     ?>
@@ -104,9 +106,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         

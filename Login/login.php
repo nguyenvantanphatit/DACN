@@ -15,7 +15,7 @@
                         setcookie("checkGV",$row['authority'],time()+(83000*30),"/");
                         echo("<script>alert('Login successful');</script>");
                         $flag=1;
-                        if($row['authority']==0)
+                        if($row['authority']==0 ||$row['authority']==-1)
                         {
                             echo("<script>location='../homepage/main.php'</script>");
                         }
